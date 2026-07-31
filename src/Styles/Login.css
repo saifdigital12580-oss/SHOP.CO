@@ -1,0 +1,259 @@
+
+
+.loginpage{
+  height: 600px;
+  width: 1250px;
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+.partsoflogin1{
+    height: 600px;
+    width: 50%;
+    /* border: 2px solid red; */
+    padding-left: 50px;
+    gap: 30px;
+    /* overflow: hidden; */
+    overflow-y: scroll;
+    
+    
+}
+.TheGamers{
+    height: 80px;
+    width: fit-content;
+    /* border: 2px solid black; */
+    font-size: large;
+    display: flex;
+    cursor: pointer;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+.welcome{
+    height: 50px;
+    width: fit-content;
+    /* border: 2px solid black; */
+    display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+.signinto{
+    height: 50px;
+    width: fit-content;
+    /* border: 2px solid black; */
+    display: flex;
+   font-family: Arial, Helvetica, sans-serif;
+   color: darkgray;
+  justify-content: center;
+  align-items: baseline;
+  font-size: large;
+}
+.emailbar{
+  height: 50px;
+  width: 400px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 1px solid rgb(203, 203, 203);
+  transition: 0.4s;
+  padding-left: 30px;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: large;
+   /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,rgb(233, 203, 166) 0px 3px 7px -3px; */
+}
+.emailbar:focus{
+ box-shadow: bisque 0px 5px 20px;
+ border: 0;
+}
+
+
+
+
+
+.password{
+     height: 50px;
+    width: 400px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid rgb(203, 203, 203);
+    padding-left: 30px;
+     transition: 0.4s;   
+      font-family: Arial, Helvetica, sans-serif;
+   font-size: large;
+}
+.password:focus{
+ box-shadow: bisque 0px 5px 20px;
+ border: 0;
+}
+
+.cheakbox{
+    height: 20px;
+    width: 30px;
+    border: 2px solid black;
+}
+
+
+
+.forgetbox{
+    width: fit-content;
+    /* border: 2px solid black; */
+    cursor: pointer;
+    color:rgb(223, 171, 107);
+    transition: all 0.4s ease-in-out;
+    
+}
+.forgetbox:active{
+    scale: 0.9;
+}
+.forgetbox:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+.logininbox{
+    height: 50px;
+    width: 400px;
+    background-color: rgb(233, 203, 166);
+    border-radius: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    font-weight: 800;
+    border: 0;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    margin-left: 30px;
+}
+.logininbox:active{
+    scale: 0.9;
+}
+.logininbox:hover{
+    background-color: rgb(236, 163, 73);
+}
+
+
+
+
+
+
+.googlesignin{
+   height: 35px;
+   width: 350px;
+   border: 1px solid gray;
+   background-color: white;
+   margin-left: 40px;
+   transition: all 0.5s ease-in-out;
+   font-family: Arial, Helvetica, sans-serif;
+   cursor: pointer;
+   font-weight: 600;
+}
+.googlesignin:active{
+    scale: 0.9;
+}
+.googlesignin:hover{
+    background-color: rgb(226, 239, 250);
+}
+
+
+
+.red{
+    color: rgb(233, 203, 166) ;
+}
+.margin{
+    margin-left: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+
+
+.creataccount{
+    cursor: pointer;
+    color:rgb(223, 171, 107);
+}
+.creataccount:hover{
+    text-decoration: underline;
+    transition: all 0.4s ease-in-out;
+}
+.margin2{
+    margin-left: 180px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.partsoflogin2{
+    height: 600px;
+    width: 60%;
+    /* border: 2px solid black; */
+    background-image: url("https://tse1.mm.bing.net/th/id/OIP.ey4V6lwgmkZ93K58ZmQEnQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.heading{
+    width: 600px;
+    height:100px ;
+    /* border: 2px solid white; */
+    color: white;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcomparagraph{
+    width: 550px;
+    height:50px ;
+    /* border: 2px solid white; */
+    color: white;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.points{
+    height: 30px;
+    width: 400px;
+    /* border: 2px solid white; */
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* text-align: center; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

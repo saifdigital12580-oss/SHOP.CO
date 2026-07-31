@@ -1,0 +1,106 @@
+/* Sidebar */
+
+.sidebar {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background: whitesmoke;
+}
+
+.Firstdivadmin {
+    height: 30% !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: start !important;
+    align-items: center;
+    gap: 0px !important;
+}
+
+.onediv {
+    height: 30%;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.twodiv {
+    height: 70% !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: row !important;
+    padding-left: 10px;
+}
+
+.circlepic {
+    height: 70px;
+    width: 30%;
+    border-radius: 50px;
+    background-image: url("https://thf.bing.com/th/id/OIP.ZAd6Ku7eZAhadikSg0y8gwHaHa?w=188&h=188&c=7&r=0&o=7&cb=thfc1falcon&dpr=1.5&pid=1.7&rm=3");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.name {
+    height: 60px;
+    width: 70%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    cursor: pointer;
+    gap: 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+.name:hover {
+    color: #545353;
+}
+
+.NavegateElements {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.NavegateElements > a {
+    text-decoration: none;
+}
+
+.home,
+.product {
+    height: 30px;
+    width: 100% !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    color: gray;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+    transition: all 0.4s ease-in-out;
+}
+
+.home:hover,
+.product:hover {
+    color: black;
+}

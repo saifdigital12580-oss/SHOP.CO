@@ -1,0 +1,89 @@
+.singleproductview{
+    display:flex;
+    gap:50px;
+    padding:40px;
+   
+}
+/* .bar1{
+    height: fit-content;
+    width: fit-content;
+     border: 2px solid black;
+} */
+
+.singleproductview1{
+    width:45%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.singleImage{
+    width:100%;
+    max-width:450px;
+    border-radius:10px;
+}
+
+.singleproductview2{
+    width:55%;
+    display: flex;
+    flex-direction: column;
+}
+
+.singleproductview2 h1{
+    font-size:35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.singleproductview2 h2{
+    color:green;
+    margin:20px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.singleproductview2 p{
+    color:#555;
+    line-height:28px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.buyBtn{
+    margin-top:30px;
+    padding:12px 30px;
+    border:none;
+    background:black;
+    color:white;
+    cursor:pointer;
+     font-size: larger;
+    font-weight: 700;
+    border-radius:8px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+.buyBtn:hover{
+    background-color: #555;
+    scale: 0.95;
+}
+.buyBtn:active{
+    scale: 0.85;
+}
+
+.addBtn{
+    margin-top:20px;
+    padding:12px 30px;
+    border:none;
+    background:rgb(2, 2, 2);
+    color:white;
+    cursor:pointer;
+    border-radius:8px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    font-size: larger;
+    font-weight: 700;
+}
+.addBtn:hover{
+    background-color: #727272;
+    scale: 0.95;
+}
+.addBtn:active{
+    scale: 0.85;
+}

@@ -1,0 +1,108 @@
+.Form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    background: linear-gradient(to bottom, white 50%, rgb(7, 7, 7) 50%);
+}
+
+.Forminnerbox {
+    height: 100%;
+    width: 50%;
+    padding-left: 50px;
+    padding-bottom: 40px;
+    gap: 30px;
+    box-shadow: 0px 5px 10px 2px #888888;
+    overflow-y: scroll;
+    background: linear-gradient(to right, white, rgb(0, 0, 0));
+}
+
+.TheGamers {
+    height: 80px;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: large;
+}
+
+.spanform {
+    color: rgb(255, 255, 255);
+}
+
+.welcome {
+    height: 50px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emailbar {
+    width: 400px;
+    min-height: 50px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 1px solid rgb(203, 203, 203);
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #888888;
+}
+
+.emailbar:focus {
+    box-shadow: rgb(255, 140, 0) 0px 5px 20px;
+    border: 0;
+    outline: none;
+}
+
+.submitbox {
+    height: 50px;
+    width: 400px;
+    background-color: rgb(243, 242, 242);
+    border-radius: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+    font-weight: 800;
+    border: 0.5px solid gray;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.submitbox:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.submitbox:active {
+    scale: 0.9;
+}
+
+.backtoproductfont {
+    color: rgb(204, 203, 203);
+    margin-left: 135px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: large;
+    width: fit-content;
+    transition: all 0.2s ease-in-out;
+}
+
+.backtoproductfont:hover {
+    color: rgb(255, 255, 255);
+}
+
+/* New class (master CSS me nahi thi) */
+
+.error {
+    color: #ff3b3b;
+    font-size: 14px;
+    margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}

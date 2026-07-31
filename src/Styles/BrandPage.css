@@ -1,0 +1,149 @@
+.brands-page{
+    width:100%;
+    background:#f7f7f7;
+    padding-bottom:80px;
+}
+
+.brands-hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.brands-hero h1{
+    font-size:52px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.brands-hero p{
+    max-width:700px;
+    margin:auto;
+    color:#666;
+    font-size:18px;
+    line-height:30px;
+}
+
+.brands-grid{
+
+    width:90%;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+}
+
+.brand-card{
+
+    height:420px;
+
+    position:relative;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    text-decoration:none;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+    transition:.4s;
+
+}
+
+.brand-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.brand-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.brand-card:hover img{
+
+    transform:scale(1.1);
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(to top,
+    rgba(0,0,0,.9),
+    rgba(0,0,0,.2));
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    padding:30px;
+
+}
+
+.overlay h2{
+
+    color:white;
+
+    font-size:40px;
+
+    margin-bottom:10px;
+
+}
+
+.overlay span{
+
+    color:#ddd;
+
+    margin-bottom:20px;
+
+    font-size:18px;
+
+}
+
+.overlay button{
+
+    width:180px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:white;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.overlay button:hover{
+
+    background:black;
+
+    color:white;
+
+}
