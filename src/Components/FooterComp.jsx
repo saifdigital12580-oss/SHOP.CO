@@ -1,5 +1,5 @@
 import React from 'react'
-import "../styles/footercomp.css"
+import "../Styles/footercomp.css"
 import { FaFacebook } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
 import { FaTwitter } from "react-icons/fa";

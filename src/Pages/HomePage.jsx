@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroSectionComp from '../components/HeroSectionComp'
+import HeroSectionComp from '../Components/HeroSectionComp'
 // import ProductsComp from '../components/ProductsComp'
 // import Login from '../components/Login'
 

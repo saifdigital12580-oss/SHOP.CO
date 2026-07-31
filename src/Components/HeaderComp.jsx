@@ -11,7 +11,7 @@ import { LuLogIn, LuLogOut } from "react-icons/lu";
 
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "../styles/HeaderComp.css";
+import "../Styles/HeaderComp.css";
 import { useCart } from "../Context/CartContext";
 import { MdAddShoppingCart } from "react-icons/md";
 import { useWishlist } from "../Context/WishlistContext";
