@@ -70,7 +70,7 @@ const [userName, setUserName] = useState("");
   localStorage.setItem("email", data.user.email);
   
 
-;
+
 }else {
       setMessage(data.message);
     }
