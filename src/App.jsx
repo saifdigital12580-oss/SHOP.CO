@@ -26,7 +26,7 @@ import Singleproductpage from './Components/Singleproductpage'
 import AddProductForm from './Components/AddProductForm'
 import CartPage from './Components/CartPage'
 import ProceedToCheckout from './Components/ProceedToCheckout'
-import PlacedOrder from './Components/placedorder'
+import PlacedOrder from './Components/PlacedOrder'
 import NewArrivalsPage from './Components/NewArrivalsPage'
 import Wishlistpage from './Components/Wishlistpage'
 import BrandsPage from "./Pages/BrandsPage";
