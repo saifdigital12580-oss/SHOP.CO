@@ -105,7 +105,7 @@ const navigate = useNavigate();
 
 
 useEffect(() => {
-  fetch("http://localhost:1000/product/all-products")
+  fetch("https://shop-cobackend.onrender.com/product/all-products")
     .then((res) => {
       console.log(res.status);
       return res.json();

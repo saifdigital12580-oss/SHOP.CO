@@ -25,7 +25,7 @@ const [userName, setUserName] = useState("");
 
   const handlelogin = async () => {
   try {
-    const response =await fetch("http://localhost:1000/auth/login-user", {
+    const response =await fetch("https://shop-cobackend.onrender.com/auth/login-user", {
   method: "POST",
   credentials: "include",
   headers: {

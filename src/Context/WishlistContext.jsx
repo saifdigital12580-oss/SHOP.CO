@@ -12,7 +12,7 @@ export const WishlistProvider = ({ children }) => {
 
     if (!userId) return;
 
-    fetch(`http://localhost:1000/wishlist/${userId}`)
+    fetch(`https://shop-cobackend.onrender.com/wishlist/${userId}`)
       .then(res => res.json())
       .then(data => {
 
@@ -41,7 +41,7 @@ export const WishlistProvider = ({ children }) => {
 
     const response = await fetch(
 
-      "http://localhost:1000/wishlist/add",
+      "https://shop-cobackend.onrender.com/wishlist/add",
 
       {
 
@@ -83,7 +83,7 @@ export const WishlistProvider = ({ children }) => {
 
     await fetch(
 
-      `http://localhost:1000/wishlist/remove/${id}`,
+      `https://shop-cobackend.onrender.com/wishlist/remove/${id}`,
 
       {
 

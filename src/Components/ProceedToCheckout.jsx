@@ -66,7 +66,7 @@ const navigate = useNavigate();
     try {
 
       const response = await fetch(
-        "http://localhost:1000/order/place-order",
+        "https://shop-cobackend.onrender.com/order/place-order",
         {
           method: "POST",
 

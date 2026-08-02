@@ -4,11 +4,15 @@ import * as yup from "yup";
 import { useState } from "react";
 import "../../Styles/shoppingform.css";
 
+
+
 const ShoppingForm = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [preview, setPreview] = useState(null);
 
   const editProduct = location.state?.product;
 
@@ -17,7 +21,7 @@ const ShoppingForm = () => {
     description: editProduct?.description || "",
     price: editProduct?.price || "",
     category: editProduct?.category || "",
-    image: editProduct?.image || "",
+    image: null,
     stock: editProduct?.stock || "",
   };
 
@@ -43,10 +47,7 @@ const ShoppingForm = () => {
       .string()
       .required("Category is required"),
 
-    image: yup
-      .string()
-      .url("Enter a valid image URL")
-      .required("Image URL is required"),
+   image: yup.mixed().required("Image is required"),
 
     stock: yup
       .number()
@@ -58,30 +59,36 @@ const ShoppingForm = () => {
 
    
     try {
-      
+      setLoading(true);
       const isEdit = !!editProduct;
       
 
       const url = isEdit
-        ? `http://localhost:1000/product/update-product/${editProduct._id}`
-        : "http://localhost:1000/product/create-product";
+        ? `https://shop-cobackend.onrender.com/product/update-product/${editProduct._id}`
+        : "https://shop-cobackend.onrender.com/product/create-product";
 
       const method = isEdit ? "PUT" : "POST";
 
-      const response = await fetch(url, {
+   
+const formData = new FormData();
+
+formData.append("name", values.name);
+formData.append("description", values.description);
+formData.append("price", values.price);
+formData.append("category", values.category);
+formData.append("stock", values.stock);
+
+if (values.image) {
+  formData.append("image", values.image);
+}
+   const response = await fetch(url, {
         method,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: values.name,
-          description: values.description,
-          price: Number(values.price),
-          category: values.category,
-          image: values.image,
-          stock: Number(values.stock),
-        }),
+        body: formData,
       });
+
+
+
+
 
       const data = await response.json();
       
@@ -96,12 +103,13 @@ const ShoppingForm = () => {
         );
 
         resetForm();
-
+        setLoading(false);
         navigate("/adminpanel/admin-products");
       } else {
         alert(data.message || "Operation failed");
       }
     } catch (error) {
+      setLoading(false);
       console.log("Server Error:", error.message);
 
       setMessage(`Error: ${error.message}`);
@@ -128,29 +136,78 @@ const ShoppingForm = () => {
 
           <br />
 
-          <Formik
-            enableReinitialize
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmit={handleSubmit}
-          >
-            <Form>
-              {/* Image URL */}
-              <div>
-                Image URL:
-                <br />
-                <Field
-                  type="text"
-                  name="image"
-                  placeholder="https://example.com/product.jpg"
-                  className="emailbar"
-                />
-                <ErrorMessage
-                  name="image"
-                  component="p"
-                  className="error"
-                />
-              </div>
+<Formik
+enableReinitialize
+initialValues={initialValues}
+validationSchema={validationSchema}
+onSubmit={handleSubmit}
+>
+
+{({ setFieldValue }) => (
+
+<Form>
+             
+<div className="uploadBox">
+
+<label className="uploadLabel">
+
+
+
+<input
+type="file"
+hidden
+accept="image/*"
+
+onChange={(e)=>{
+
+const file=e.currentTarget.files[0];
+if(!file) return;
+setFieldValue("image",file);
+setPreview(URL.createObjectURL(file));
+}}
+/>
+{
+
+preview?
+
+<div className="previewBox">
+
+<img
+src={preview}
+alt=""
+className="previewImage"
+/>
+
+<button
+type="button"
+className="removeImage"
+onClick={()=>{
+setPreview(null);
+setFieldValue("image",null);
+}}
+>
+✕
+</button>
+</div>
+:
+<div className="uploadContent">
+<h2>📸 Upload Product Image</h2>
+<p>
+Drag & Drop
+<br/>
+or
+<br/>
+Click Here
+</p>
+</div>
+}
+</label>
+<ErrorMessage
+name="image"
+component="p"
+className="error"
+/>
+</div>
 
               <br />
 
@@ -250,9 +307,23 @@ const ShoppingForm = () => {
               <br />
               <br />
 
-              <button type="submit" className="submitbox">
-                {editProduct ? "Update Product" : "Create Product"}
-              </button>
+<button
+type="submit"
+className="submitbox"
+disabled={loading}
+>
+{
+loading
+?
+"Uploading..."
+:
+editProduct
+?
+"Update Product"
+:
+"Create Product"
+}
+</button>
 
               {message && (
                 <p
@@ -266,6 +337,7 @@ const ShoppingForm = () => {
                 </p>
               )}
             </Form>
+             )}
           </Formik>
 
           <br />

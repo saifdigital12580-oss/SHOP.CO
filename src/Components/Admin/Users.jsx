@@ -9,7 +9,7 @@ const Users = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch( "http://localhost:1000/auth/get-user", {
+      const response = await fetch( "https://shop-cobackend.onrender.com/auth/get-user", {
        credentials: "include",
      });
 
@@ -41,7 +41,7 @@ const handleDelete = async (id) => {
 
   try {
     const response = await fetch(
-      `http://localhost:1000/auth/delete-users/${id}`,
+      `https://shop-cobackend.onrender.com/auth/delete-users/${id}`,
       {
         method: "DELETE",
         credentials: "include",
@@ -75,7 +75,7 @@ const handleDelete = async (id) => {
   // 
 //   try {
 //     const response = await fetch(
-//       "http://localhost:1000/auth/delete-users",
+//       "https://shop-cobackend.onrender.com/auth/delete-users",
 //       {
 //         method: "DELETE",
 //         headers: {

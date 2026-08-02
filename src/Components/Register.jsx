@@ -19,7 +19,7 @@ const Register = () => {
 
     const handleRegister = async () => {
   try {
-    const response = await fetch("http://localhost:1000/auth/register-user", {
+    const response = await fetch("https://shop-cobackend.onrender.com/auth/register-user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

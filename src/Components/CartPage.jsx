@@ -30,7 +30,7 @@ const {
 
 //     try {
 //       const response = await fetch(
-//         `http://localhost:1000/product/delete-product/${id}`,
+//         `https://shop-cobackend.onrender.com/product/delete-product/${id}`,
 //         {
 //           method: "DELETE",
 //         }

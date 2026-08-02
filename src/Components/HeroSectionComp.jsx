@@ -165,7 +165,7 @@ useEffect(() => {
         try {
 
             const response = await fetch(
-                "http://localhost:1000/product/all-products"
+                "https://shop-cobackend.onrender.com/product/all-products"
             );
 
             const data = await response.json();

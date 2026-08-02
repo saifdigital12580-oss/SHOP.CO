@@ -9,7 +9,7 @@ const DashBoardProduct = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:1000/product/all-products")
+    fetch("https://shop-cobackend.onrender.com/product/all-products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.products);
@@ -29,7 +29,7 @@ const DashBoardProduct = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:1000/product/delete-product/${id}`,
+        `https://shop-cobackend.onrender.com/product/delete-product/${id}`,
         {
           method: "DELETE",
         }
