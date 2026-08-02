@@ -81,7 +81,17 @@ const navigate = useNavigate();
             address: formData.address,
             notes: formData.notes,
 
-            products: cartItems,
+            products: cartItems.map((item) => ({
+             productId: item._id,
+           
+             title: item.title,
+           
+             image: item.image,
+           
+             price: item.price,
+           
+             quantity: item.quantity,
+           })),
 
             totalPrice,
           }),
