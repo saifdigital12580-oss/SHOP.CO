@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import "../../Styles/dashboardrecentorders.css";
 const DashboardRecentOrders = () => {
   const [orders, setOrders] = useState([]);
 
@@ -39,27 +39,61 @@ const DashboardRecentOrders = () => {
           </tr>
         </thead>
 
-        <tbody>
+<tbody>
 
-          {orders.map((order) => (
+{orders.map((order)=>(
 
-            <tr key={order._id}>
+<tr key={order._id}>
 
-              <td>{order.customerName}</td>
+<td>
 
-              <td>Rs {order.totalPrice}</td>
+<div className="customer-box">
 
-              <td>{order.orderStatus}</td>
+<div className="customer-avatar">
 
-              <td>
-                {new Date(order.createdAt).toLocaleDateString()}
-              </td>
+{order.customerName.charAt(0)}
 
-            </tr>
+</div>
 
-          ))}
+<div>
 
-        </tbody>
+<h4>{order.customerName}</h4>
+
+</div>
+
+</div>
+
+</td>
+
+<td>
+
+Rs {order.totalPrice.toLocaleString()}
+
+</td>
+
+<td>
+
+<span
+className={`status ${order.orderStatus.toLowerCase()}`}
+>
+
+{order.orderStatus}
+
+</span>
+
+</td>
+
+<td>
+
+{new Date(order.createdAt).toLocaleDateString()}
+
+</td>
+
+</tr>
+
+))}
+
+</tbody>
 
       </table>
 

@@ -7,7 +7,7 @@ const PlacedOrder = () => {
 
     useEffect(()=>{
 
-        fetch("http://localhost:1000/order/all-orders")
+        fetch("https://shop-cobackend.onrender.com/order/all-orders")
         .then(res=>res.json())
         .then(data=>{
             setOrders(data.orders);
