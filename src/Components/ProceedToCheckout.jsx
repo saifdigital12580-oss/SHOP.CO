@@ -64,7 +64,7 @@ const navigate = useNavigate();
     }
 
     try {
-
+      console.log(cartItems);
       const response = await fetch(
         "https://shop-cobackend.onrender.com/order/place-order",
         {
@@ -73,23 +73,19 @@ const navigate = useNavigate();
           headers: {
             "Content-Type": "application/json",
           },
-
+           
           body: JSON.stringify({
             customerName: formData.name,
             phone: formData.phone,
             city: formData.city,
             address: formData.address,
             notes: formData.notes,
-
+             
             products: cartItems.map((item) => ({
              productId: item._id,
-           
-             title: item.title,
-           
+             title: item.name,
              image: item.image,
-           
              price: item.price,
-           
              quantity: item.quantity,
            })),
 
