@@ -9,6 +9,7 @@ import { FaBoxOpen } from "react-icons/fa";
 import "../../Styles/dashboardhome.css";
 import DashboardRecentOrders from "./DashboardRecentOrders";
 import DashboardTimeline from "./DashboardTimeline";
+import DashboardCustomers from "./DashboardCustomers";
 const DashboardHome = () => {
 
 
@@ -255,7 +256,9 @@ const fetchDashboard = async () => {
 
 
 
+<DashboardTimeline/>
 
+<DashboardCustomers/>
 
 
       </div>
