@@ -1,3 +1,164 @@
+/* ===========================
+   DASHBOARD HERO
+=========================== */
+
+.dashboardHero{
+
+    width:100%;
+
+    min-height:180px;
+
+    background:linear-gradient(135deg,#6C63FF,#4F46E5);
+
+    border-radius:28px;
+
+    padding:40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+    color:white;
+
+    box-shadow:0 25px 60px rgba(108,99,255,.28);
+
+}
+
+.heroLeft h1{
+
+    font-size:42px;
+
+    margin:15px 0;
+
+    font-weight:800;
+
+}
+
+.heroLeft p{
+
+    width:550px;
+
+    color:#ececff;
+
+    line-height:1.7;
+
+    font-size:16px;
+
+}
+
+.heroBadge{
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    font-weight:600;
+
+}
+
+.heroRight{
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.heroBtn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:16px 28px;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.addProductBtn{
+
+    background:white;
+
+    color:#6C63FF;
+
+}
+
+.exportBtn{
+
+    background:rgba(255,255,255,.18);
+
+    color:white;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.heroBtn:hover{
+
+    transform:translateY(-5px);
+
+}
+@media(max-width:900px){
+
+.dashboardHero{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:25px;
+
+}
+
+.heroLeft p{
+
+width:100%;
+
+}
+
+.heroRight{
+
+width:100%;
+
+flex-wrap:wrap;
+
+}
+
+.heroBtn{
+
+width:100%;
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
 /* .dashboard-analytics {
     width: 100%;
     height: 100%;

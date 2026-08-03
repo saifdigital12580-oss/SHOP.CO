@@ -45,7 +45,32 @@ const fetchDashboard = async () => {
 
   return (
     <>
+
+
      <div className='dashboard-analytics'>
+      
+      <div className="dashboardHero">
+  <div className="heroLeft">
+    <span className="heroBadge">
+      👋 Welcome Back
+    </span>
+    <h1>
+      Hello, Saifullah Khan
+    </h1>
+    <p>
+      Manage products, track orders, monitor revenue and grow your business
+      from one beautiful dashboard.
+    </p>
+  </div>
+  <div className="heroRight">
+    <button className="heroBtn addProductBtn">
+      ➕ Add Product
+    </button>
+    <button className="heroBtn exportBtn">
+      📄 Export Report
+    </button>
+  </div>
+</div>
 
         <div className='fourdivparent'>
 
