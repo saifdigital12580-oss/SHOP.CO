@@ -11,6 +11,7 @@ import DashboardRecentOrders from "./DashboardRecentOrders";
 import DashboardTimeline from "./DashboardTimeline";
 import DashboardCustomers from "./DashboardCustomers";
 import DashboardLowStock from "./DashboardLowStock";
+import DashboardCategoryChart from "./DashboardCategoryChart";
 
 
 
@@ -186,7 +187,7 @@ const fetchDashboard = async () => {
  <div className='analyticsdiv'>
 
 <div className="analyticsbox1">
-  <DashboardAnalytics />
+ <DashboardCategoryChart/>
 </div>
 
 
