@@ -12,11 +12,12 @@ const DashboardHome = () => {
 
 
 
-  const [stats, setStats] = useState({
+const [stats, setStats] =useState({
   totalUsers: 0,
   totalProducts: 0,
   totalOrders: 0,
   totalRevenue: 0,
+  topProducts: [],
 });
 
 useEffect(() => {
@@ -146,7 +147,33 @@ const fetchDashboard = async () => {
 </div>
 
 <div className="analyticsbox2">
-  Coming Soon...
+
+  <h2>🏆 Top Selling Product</h2>
+
+  {stats.topProducts.length > 0 ? (
+
+    <div className="top-product-card">
+
+      <img
+        src={stats.topProducts[0].image}
+        alt="Top Product"
+      />
+
+      <div className="top-product-info">
+        <h3>Best Seller</h3>
+        <p>
+          Sold :
+          <strong> {stats.topProducts[0].sold}</strong>
+        </p>
+        <p>
+          Revenue :
+          <strong> Rs {stats.topProducts[0].revenue}</strong>
+        </p>
+      </div>
+    </div>
+  ) : (
+    <p>No Product Found</p>
+  )}
 </div>
 
 <DashboardRecentOrders />
