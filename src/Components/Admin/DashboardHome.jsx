@@ -48,7 +48,7 @@ const fetchDashboard = async () => {
 
 
      <div className='dashboard-analytics'>
-      
+
       <div className="dashboardHero">
   <div className="heroLeft">
     <span className="heroBadge">
@@ -72,6 +72,22 @@ const fetchDashboard = async () => {
   </div>
 </div>
 
+<div className="money revenueIcon">
+    <MdAttachMoney />
+</div>
+<div className="money userIcon">
+    <IoPeopleSharp />
+</div>
+<div className="money productIcon">
+    <FaBoxOpen />
+</div>
+
+
+
+
+
+
+
         <div className='fourdivparent'>
 
           {/* First Box */}
@@ -84,10 +100,10 @@ const fetchDashboard = async () => {
 
             <div className='box2admin'>
               <div className='boxadmin1'>Total Revenue</div>
-              <div className='boxadmin2'>Rs. {stats.totalRevenue}</div>
+              <div className='boxadmin2' style={{color:"#22c55e"}}>Rs {stats.totalRevenue.toLocaleString()}</div>
               <div className='boxadmin3'>
                 <span className='span'>
-                  <FaArrowUp />00.0%
+                  <FaArrowUp />18%
                 </span>
                 {" "}vs Last Week
               </div>
@@ -104,10 +120,10 @@ const fetchDashboard = async () => {
 
             <div className='box2admin'>
               <div className='boxadmin1'>Total Orders</div>
-              <div className='boxadmin2'>{stats.totalOrders}</div>
+              <div className='boxadmin2'>{stats.totalOrders.toLocaleString()}</div>
               <div className='boxadmin3'>
                 <span className='span'>
-                  <FaArrowUp />00.0%
+                  <FaArrowUp />5%
                 </span>
                 {" "}vs Last Week
               </div>
@@ -124,10 +140,10 @@ const fetchDashboard = async () => {
 
             <div className='box2admin'>
               <div className='boxadmin1'>Total Customers</div>
-              <div className='boxadmin2'>{stats.totalUsers}</div>
+              <div className='boxadmin2'>{stats.totalUsers.toLocaleString()}</div>
               <div className='boxadmin3'>
                 <span className='span'>
-                  <FaArrowUp />00.0%
+                  <FaArrowUp />1.5%
                 </span>
                 {" "}vs Last Week
               </div>
@@ -143,10 +159,10 @@ const fetchDashboard = async () => {
 
             <div className='box2admin'>
               <div className='boxadmin1'>Total Products</div>
-              <div className='boxadmin2'>{stats.totalProducts}</div>
+              <div className='boxadmin2'>{stats.totalProducts.toLocaleString()}</div>
               <div className='boxadmin3'>
                 <span className='span'>
-                  <FaArrowUp />00.0%
+                  <FaArrowUp />20%
                 </span>
                 {" "}vs Last Week
               </div>

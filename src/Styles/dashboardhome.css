@@ -207,7 +207,7 @@ width:100%;
     display:flex;
     align-items:center;
     justify-content:space-between;
-
+    border:1px solid #ececff;
     box-shadow:
     0 12px 35px rgba(0,0,0,.08);
 
@@ -218,14 +218,13 @@ width:100%;
 /* .onebox:hover {
     scale: 0.9;
 } */
- .onebox:hover{
+.onebox:hover{
 
-transform:translateY(-8px);
-
+transform:
+translateY(-12px)
+scale(1.03);
 box-shadow:
-
-0 25px 60px rgba(0,0,0,.15);
-
+0 30px 70px rgba(0,0,0,.18);
 }
 
 .box1admin {
@@ -262,6 +261,51 @@ color:white;
 box-shadow:
 0 10px 25px rgba(91,92,255,.35);
 }
+.revenueIcon{
+
+background:linear-gradient(135deg,#22c55e,#16a34a);
+
+box-shadow:
+0 15px 30px rgba(34,197,94,.35);
+
+}
+
+.orderIcon{
+
+background:linear-gradient(135deg,#f97316,#ea580c);
+
+box-shadow:
+0 15px 30px rgba(249,115,22,.35);
+
+}
+
+.userIcon{
+
+background:linear-gradient(135deg,#3b82f6,#2563eb);
+
+box-shadow:
+0 15px 30px rgba(59,130,246,.35);
+
+}
+
+.productIcon{
+
+background:linear-gradient(135deg,#8b5cf6,#6d28d9);
+
+box-shadow:
+0 15px 30px rgba(139,92,246,.35);
+
+}
+
+
+
+
+
+
+
+
+
+
 
 .box2admin {
     height: 100%;
@@ -298,11 +342,18 @@ margin-bottom:8px;
     justify-content: start;
     align-items: center;
 } */
- .boxadmin2{
+.boxadmin2{
+
 font-size:34px;
+
 font-weight:800;
-color:#1aff00;
-margin-bottom:10px;
+
+letter-spacing:1px;
+
+color:#111827;
+
+transition:.3s;
+
 }
 
 /* .boxadmin3 {
