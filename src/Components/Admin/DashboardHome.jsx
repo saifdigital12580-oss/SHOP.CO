@@ -146,35 +146,68 @@ const fetchDashboard = async () => {
   <DashboardAnalytics />
 </div>
 
+
+
 <div className="analyticsbox2">
 
-  <h2>🏆 Top Selling Product</h2>
+    <div className="topHeading">
 
-  {stats.topProducts.length > 0 ? (
+        <span className="badge">
+            🏆 Best Seller
+        </span>
 
-    <div className="top-product-card">
+        <h2>Top Selling Product</h2>
 
-      <img
-        src={stats.topProducts[0].image}
-        alt="Top Product"
-      />
-
-      <div className="top-product-info">
-        <h3>Best Seller</h3>
-        <p>
-          Sold :
-          <strong> {stats.topProducts[0].sold}</strong>
-        </p>
-        <p>
-          Revenue :
-          <strong> Rs {stats.topProducts[0].revenue}</strong>
-        </p>
-      </div>
     </div>
-  ) : (
-    <p>No Product Found</p>
-  )}
+
+    {
+        stats.topProducts.length > 0 && (
+
+            <>
+
+                <img
+                    className="topImage"
+                    src={stats.topProducts[0].image}
+                    alt=""
+                />
+
+                <h3 className="productName">
+                    {stats.topProducts[0].title}
+                </h3>
+
+                <div className="rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <div className="topStats">
+
+                    <div className="statCard">
+
+                        <span>Orders</span>
+
+                        <h4>{stats.topProducts[0].sold}</h4>
+
+                    </div>
+
+                    <div className="statCard">
+
+                        <span>Revenue</span>
+
+                        <h4>
+                            Rs {stats.topProducts[0].revenue}
+                        </h4>
+
+                    </div>
+
+                </div>
+
+            </>
+
+        )
+    }
+
 </div>
+
 
 <DashboardRecentOrders />
  </div>
