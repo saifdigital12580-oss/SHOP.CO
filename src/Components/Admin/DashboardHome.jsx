@@ -8,6 +8,7 @@ import { IoPeopleSharp } from "react-icons/io5";
 import { FaBoxOpen } from "react-icons/fa";
 import "../../Styles/dashboardhome.css";
 import DashboardRecentOrders from "./DashboardRecentOrders";
+import DashboardTimeline from "./DashboardTimeline";
 const DashboardHome = () => {
 
 
@@ -245,6 +246,7 @@ const fetchDashboard = async () => {
 
 
 <DashboardRecentOrders />
+<DashboardTimeline />
  </div>
 
 
