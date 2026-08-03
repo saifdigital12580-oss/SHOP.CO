@@ -72,15 +72,9 @@ const fetchDashboard = async () => {
   </div>
 </div>
 
-<div className="money revenueIcon">
-    <MdAttachMoney />
-</div>
-<div className="money userIcon">
-    <IoPeopleSharp />
-</div>
-<div className="money productIcon">
-    <FaBoxOpen />
-</div>
+
+
+
 
 
 
@@ -93,9 +87,9 @@ const fetchDashboard = async () => {
           {/* First Box */}
           <div className='onebox'>
             <div className='box1admin'>
-              <div className='money'>
-                <MdAttachMoney />
-              </div>
+<div className="money revenueIcon">
+    <MdAttachMoney />
+</div>
             </div>
 
             <div className='box2admin'>
@@ -133,9 +127,9 @@ const fetchDashboard = async () => {
           {/* {Third box} */}
           <div className='onebox'>
             <div className='box1admin'>
-              <div className='money'>
-                <IoPeopleSharp />
-              </div>
+<div className="money userIcon">
+    <IoPeopleSharp />
+</div>
             </div>
 
             <div className='box2admin'>
@@ -152,9 +146,9 @@ const fetchDashboard = async () => {
              {/* {fourth box} */}
           <div className='onebox'>
             <div className='box1admin'>
-              <div className='money'>
-                <FaBoxOpen />
-              </div>
+<div className="money productIcon">
+    <FaBoxOpen />
+</div>
             </div>
 
             <div className='box2admin'>
