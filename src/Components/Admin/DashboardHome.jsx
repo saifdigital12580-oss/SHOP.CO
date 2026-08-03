@@ -10,6 +10,12 @@ import "../../Styles/dashboardhome.css";
 import DashboardRecentOrders from "./DashboardRecentOrders";
 import DashboardTimeline from "./DashboardTimeline";
 import DashboardCustomers from "./DashboardCustomers";
+import DashboardLowStock from "./DashboardLowStock";
+
+
+
+
+
 const DashboardHome = () => {
 
 
@@ -259,6 +265,9 @@ const fetchDashboard = async () => {
 <DashboardTimeline/>
 
 <DashboardCustomers/>
+
+
+<DashboardLowStock/>
 
 
       </div>
