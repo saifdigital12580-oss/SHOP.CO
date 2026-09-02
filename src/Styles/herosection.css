@@ -80,14 +80,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    
 }
 
 
 .price{
    height: 100px;
    width: 200px;
-   /* border: 2px solid black; */
+   border: 2px solid black;
    display: flex;
    justify-content: center;
    /* align-items: center; */
