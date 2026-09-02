@@ -78,7 +78,7 @@
     width: 100%;
     /* border: 2px solid black; */
     display: flex;
-    justify-content: center;
+    justify-content: center !important;
     align-items: center !important;
     gap: 20px;
 }
