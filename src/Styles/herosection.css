@@ -93,6 +93,7 @@
    /* align-items: center; */
    flex-direction: column;
    line-height: 15px;
+   gap: 20px;
 }
 .twohundered{
     font-family: Arial, Helvetica, sans-serif;
