@@ -186,7 +186,7 @@ const fetchDashboard = async () => {
 
  <div className='analyticsdiv'>
 
-<div className="analyticsbox1">
+<div className="analyticsbox1 revenueAnalyticsWrapper">
  <DashboardCategoryChart/>
 </div>
 
@@ -254,7 +254,7 @@ const fetchDashboard = async () => {
 
 
 <DashboardRecentOrders />
-<DashboardTimeline />
+{/* <DashboardTimeline /> */}
  </div>
 
 

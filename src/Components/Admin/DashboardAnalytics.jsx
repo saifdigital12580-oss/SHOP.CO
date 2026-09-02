@@ -1,167 +1,250 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import {
-  ResponsiveContainer,
   LineChart,
   Line,
-  CartesianGrid,
   XAxis,
   YAxis,
+  CartesianGrid,
   Tooltip,
+  ResponsiveContainer,
+  Legend,
 } from "recharts";
 
-const data = [
-  { month: "Jan", sales: 12000 },
-  { month: "Feb", sales: 18000 },
-  { month: "Mar", sales: 15000 },
-  { month: "Apr", sales: 26000 },
-  { month: "May", sales: 32000 },
-  { month: "Jun", sales: 42000 },
-];
+import { FaChartLine } from "react-icons/fa";
 
 const DashboardAnalytics = () => {
 
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
   useEffect(() => {
-  fetchSales();
-}, []);
-const fetchSales = async () => {
-  try {
+    fetchSales();
+  }, []);
 
-    const response = await fetch(
-      "https://shop-cobackend.onrender.com/dashboard/monthly-sales"
-    );
+  const fetchSales = async () => {
 
-    const result = await response.json();
+    try {
 
-    if (result.success) {
+      const response = await fetch(
+        "https://shop-cobackend.onrender.com/dashboard/monthly-sales"
+      );
 
-      const monthNames = [
-        "",
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ];
+      const result = await response.json();
 
- const months = [
+      if (result.success) {
 
-{ month:"Jan", sales:0 },
+        const formattedData = result.sales.map((item) => ({
+          month: months[item._id.month - 1],
+          revenue: item.revenue,
+          orders: item.orders,
+        }));
 
-{ month:"Feb", sales:0 },
+        setData(formattedData);
+      }
 
-{ month:"Mar", sales:0 },
+    } catch (error) {
 
-{ month:"Apr", sales:0 },
+      console.log("Monthly Sales Error:", error);
 
-{ month:"May", sales:0 },
+    } finally {
 
-{ month:"Jun", sales:0 },
-
-{ month:"Jul", sales:0 },
-
-{ month:"Aug", sales:0 },
-
-{ month:"Sep", sales:0 },
-
-{ month:"Oct", sales:0 },
-
-{ month:"Nov", sales:0 },
-
-{ month:"Dec", sales:0 },
-
-];
-
-result.sales.forEach((item)=>{
-
-months[item._id.month-1].sales=item.sales;
-
-});
-
-setData(months);
-
-
+      setLoading(false);
 
     }
 
-  } catch (error) {
+  };
 
-    console.log(error);
+  const totalRevenue = data.reduce(
+    (total, item) => total + item.revenue,
+    0
+  );
 
-  }
-};
-
-
+  const totalOrders = data.reduce(
+    (total, item) => total + item.orders,
+    0
+  );
 
   return (
-    <div style={{ width: "100%", height: 350 }}>
-      <h2 style={{ marginBottom: 20 }}>
-        📈 Sales Analytics
-      </h2>
 
-      <ResponsiveContainer>
-        <LineChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
+    <div className="revenueAnalytics">
 
-          <XAxis dataKey="month" />
+      {/* Header */}
 
-<YAxis
-tickFormatter={(value)=>
+      <div className="revenueHeader">
 
-`${value/1000}k`
+        <div>
 
-}
-/>
+          <div className="analyticsTitle">
 
-<Tooltip
+            <span className="analyticsIcon">
+              <FaChartLine />
+            </span>
 
-contentStyle={{
-borderRadius:"12px",
-border:"none",
-boxShadow:"0 15px 35px rgba(0,0,0,.15)"
-}}
+            <div>
+              <h2>Revenue Analytics</h2>
 
-formatter={(value)=>[
-`Rs ${value.toLocaleString()}`,
-"Revenue"
-]}
+              <p>
+                Monitor your revenue and order performance
+              </p>
+            </div>
 
-/>
+          </div>
 
-<Line
-type="monotone"
+        </div>
 
-dataKey="sales"
+      </div>
 
-stroke="#6C63FF"
 
-strokeWidth={5}
+      {/* Stats */}
 
-dot={{
-r:6,
-stroke:"#6C63FF",
-strokeWidth:2,
-fill:"#fff"
-}}
+      <div className="analyticsStats">
 
-activeDot={{
-r:9
-}}
+        <div className="analyticsStat">
 
-animationDuration={1800}
+          <span>Total Revenue</span>
 
-/>
+          <strong>
+            Rs {totalRevenue.toLocaleString()}
+          </strong>
 
-        </LineChart>
-      </ResponsiveContainer>
+        </div>
+
+
+        <div className="analyticsStat">
+
+          <span>Total Orders</span>
+
+          <strong>
+            {totalOrders.toLocaleString()}
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      {/* Chart */}
+
+      <div className="revenueChart">
+
+        {loading ? (
+
+          <div className="chartLoading">
+            Loading analytics...
+          </div>
+
+        ) : data.length === 0 ? (
+
+          <div className="chartLoading">
+            No sales data available
+          </div>
+
+        ) : (
+
+          <ResponsiveContainer
+            width="100%"
+            height={300}
+          >
+
+            <LineChart
+              data={data}
+              margin={{
+                top: 15,
+                right: 20,
+                left: 10,
+                bottom: 5,
+              }}
+            >
+
+              <CartesianGrid
+                strokeDasharray="3 3"
+                vertical={false}
+              />
+
+              <XAxis
+                dataKey="month"
+                axisLine={false}
+                tickLine={false}
+              />
+
+              <YAxis
+                axisLine={false}
+                tickLine={false}
+              />
+
+              <Tooltip
+                contentStyle={{
+                  borderRadius: "12px",
+                  border: "none",
+                  boxShadow:
+                    "0 10px 30px rgba(0,0,0,0.12)",
+                }}
+                formatter={(value, name) => {
+
+                  if (name === "Revenue") {
+                    return [
+                      `Rs ${Number(value).toLocaleString()}`,
+                      name,
+                    ];
+                  }
+
+                  return [value, name];
+
+                }}
+              />
+
+              <Legend />
+
+              <Line
+                type="monotone"
+                dataKey="revenue"
+                name="Revenue"
+                stroke="#6366f1"
+                strokeWidth={4}
+                dot={{
+                  r: 5,
+                  strokeWidth: 3,
+                }}
+                activeDot={{
+                  r: 8,
+                }}
+              />
+
+              <Line
+                type="monotone"
+                dataKey="orders"
+                name="Orders"
+                stroke="#22c55e"
+                strokeWidth={3}
+                dot={{
+                  r: 4,
+                }}
+              />
+
+            </LineChart>
+
+          </ResponsiveContainer>
+
+        )}
+
+      </div>
+
     </div>
   );
 };

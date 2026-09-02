@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import "../../Styles/dashboardrecentorders.css";
+
 const DashboardRecentOrders = () => {
   const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchOrders();
@@ -19,83 +21,171 @@ const DashboardRecentOrders = () => {
         setOrders(data.orders);
       }
     } catch (error) {
-      console.log(error);
+      console.log("Recent Orders Error:", error);
+    } finally {
+      setLoading(false);
     }
+  };
+
+  const getInitial = (name) => {
+    if (!name) return "?";
+    return name.charAt(0).toUpperCase();
   };
 
   return (
     <div className="recent-orders-card">
 
-      <h2>Recent Orders</h2>
+      <div className="recent-orders-header">
 
-      <table className="recent-orders-table">
+        <div>
+          <span className="section-label">
+            ORDER MANAGEMENT
+          </span>
 
-        <thead>
-          <tr>
-            <th>Customer</th>
-            <th>Amount</th>
-            <th>Status</th>
-            <th>Date</th>
-          </tr>
-        </thead>
+          <h2>Recent Orders</h2>
 
-<tbody>
+          <p>
+            Latest orders placed by your customers
+          </p>
+        </div>
 
-{orders.map((order)=>(
+        <button className="view-all-btn">
+          View All →
+        </button>
 
-<tr key={order._id}>
+      </div>
 
-<td>
+      <div className="orders-table-wrapper">
 
-<div className="customer-box">
+        {loading ? (
 
-<div className="customer-avatar">
+          <div className="orders-loading">
+            <div className="loading-spinner"></div>
+            <span>Loading orders...</span>
+          </div>
 
-{order.customerName.charAt(0)}
+        ) : orders.length === 0 ? (
 
-</div>
+          <div className="orders-empty">
+            <div className="empty-icon">🛒</div>
+            <h3>No Orders Yet</h3>
+            <p>
+              Your recent customer orders will appear here.
+            </p>
+          </div>
 
-<div>
+        ) : (
 
-<h4>{order.customerName}</h4>
+          <table className="recent-orders-table">
 
-</div>
+            <thead>
+              <tr>
+                <th>Customer</th>
+                <th>Order ID</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Date</th>
+              </tr>
+            </thead>
 
-</div>
+            <tbody>
 
-</td>
+              {orders.map((order) => (
 
-<td>
+                <tr key={order._id}>
 
-Rs {order.totalPrice.toLocaleString()}
+                  {/* Customer */}
 
-</td>
+                  <td>
 
-<td>
+                    <div className="customer-box">
 
-<span
-className={`status ${order.orderStatus.toLowerCase()}`}
->
+                      <div className="customer-avatar">
+                        {getInitial(order.customerName)}
+                      </div>
 
-{order.orderStatus}
+                      <div className="customer-info">
 
-</span>
+                        <h4>
+                          {order.customerName || "Unknown Customer"}
+                        </h4>
 
-</td>
+                        <span>
+                          Customer
+                        </span>
 
-<td>
+                      </div>
 
-{new Date(order.createdAt).toLocaleDateString()}
+                    </div>
 
-</td>
+                  </td>
 
-</tr>
+                  {/* Order ID */}
 
-))}
+                  <td>
 
-</tbody>
+                    <span className="order-id">
+                      #{order._id.slice(-6).toUpperCase()}
+                    </span>
 
-      </table>
+                  </td>
+
+                  {/* Amount */}
+
+                  <td>
+
+                    <strong className="order-amount">
+                      Rs {Number(order.totalPrice || 0).toLocaleString()}
+                    </strong>
+
+                  </td>
+
+                  {/* Status */}
+
+                  <td>
+
+                    <span
+                      className={`status ${(
+                        order.orderStatus || "Pending"
+                      ).toLowerCase()}`}
+                    >
+                      <span className="status-dot"></span>
+
+                      {order.orderStatus || "Pending"}
+                    </span>
+
+                  </td>
+
+                  {/* Date */}
+
+                  <td>
+
+                    <span className="order-date">
+                      {order.createdAt
+                        ? new Date(order.createdAt).toLocaleDateString(
+                            "en-GB",
+                            {
+                              day: "2-digit",
+                              month: "short",
+                              year: "numeric",
+                            }
+                          )
+                        : "—"}
+                    </span>
+
+                  </td>
+
+                </tr>
+
+              ))}
+
+            </tbody>
+
+          </table>
+
+        )}
+
+      </div>
 
     </div>
   );
