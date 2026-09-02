@@ -199,7 +199,7 @@ console.log(products);
        <div className='Displaypart1'>
          <div ref={containerRef} >
      
-        <div ref={box1Ref} className="Fonts1"><h1><b>FIND CLOTHES THAT MATCHES YOUrrR STYLE</b></h1></div>
+        <div ref={box1Ref} className="Fonts1"><h1><b>FIND CLOTHES THAT MATCHES YOUR STYLE</b></h1></div>
 
         
 
