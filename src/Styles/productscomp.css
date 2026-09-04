@@ -193,11 +193,12 @@ body{
 
 
 .products-grid{
-    width:90%;
+    width:100%;
     margin:auto;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
+    border: 2px solid black;
 }
 
 .product-card{
