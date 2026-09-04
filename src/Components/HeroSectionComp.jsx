@@ -268,7 +268,7 @@ console.log(products);
         
       
  <div className="products-grid">
-  {products.slice(0, 8).map((item) => (
+  {products.slice(0, 7).map((item) => (
 
     <div className="product-card" key={item._id}>
 
@@ -363,7 +363,7 @@ console.log(products);
         <div className='linebyline'>
       
  <div className="products-grid">
-  {products.slice(8, 17).map((item) => (
+  {products.slice(7, 16).map((item) => (
 
     <div className="product-card" key={item._id}>
 

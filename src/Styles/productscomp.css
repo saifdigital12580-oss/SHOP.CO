@@ -193,7 +193,7 @@ body{
 
 
 .products-grid{
-    width:100%;
+    width:90%;
     margin:auto;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
