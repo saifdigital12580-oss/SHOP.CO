@@ -202,7 +202,7 @@ body{
 }
 
 .product-card{
-
+    width: 100%;
     background:white;
     border-radius:30px;
     overflow:hidden;
