@@ -363,7 +363,7 @@ console.log(products);
         <div className='linebyline'>
       
  <div className="products-grid">
-  {products.slice(7, 16).map((item) => (
+  {products.slice(8, 17).map((item) => (
 
     <div className="product-card" key={item._id}>
 
