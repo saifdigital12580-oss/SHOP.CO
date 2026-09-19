@@ -15,7 +15,7 @@ const fetchUsers=async()=>{
 
 const response=await fetch(
 
-"https://shop-cobackend.onrender.com/dashboard/latest-customers"
+"https://sk-store-theta.vercel.app/dashboard/latest-customers"
 
 );
 

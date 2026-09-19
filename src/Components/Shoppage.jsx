@@ -1,5 +1,6 @@
 import React from 'react'
 import "../Styles/shoppage.css"
+import "../Styles/productscomp.css"
 import { TbFilter2Cog } from "react-icons/tb";
 import { IoIosArrowForward } from "react-icons/io";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
@@ -11,10 +12,15 @@ import { useCart } from "../Context/CartContext";
   
 const Shoppage = () => {
   const { addToCart } = useCart();
-    const [open, setOpen] = useState(true);
-  const [colorOpen, setColorOpen] = useState(false);
+  const [open, setOpen] = useState(true);
+
+const [colorOpen, setColorOpen] = useState(false);
 const [sizeOpen, setSizeOpen] = useState(false);
+const [dressOpen, setDressOpen] = useState(false);
+
 const [selectedSize, setSelectedSize] = useState("");
+const [selectedColor, setSelectedColor] = useState("");
+const [selectedDress, setSelectedDress] = useState("");
 
 
 
@@ -105,7 +111,7 @@ const navigate = useNavigate();
 
 
 useEffect(() => {
-  fetch("https://shop-cobackend.onrender.com/product/all-products")
+  fetch("https://sk-store-theta.vercel.app/product/all-products")
     .then((res) => {
       console.log(res.status);
       return res.json();
@@ -121,6 +127,47 @@ useEffect(() => {
       setLoading(false);
     });
 }, []);
+
+// ================= FILTER SECTION COMPONENT =================
+
+const FilterSection = ({
+  title,
+  icon,
+  isOpen,
+  setIsOpen,
+  children,
+}) => {
+  return (
+    <div className="smallFilterBox">
+
+      <div
+        className="smallFilterHeader"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <h3>
+          {title}
+          {icon}
+        </h3>
+
+        {isOpen ? (
+          <FaChevronUp />
+        ) : (
+          <FaChevronDown />
+        )}
+      </div>
+
+      {isOpen && (
+        <div className="smallFilterBody">
+          {children}
+        </div>
+      )}
+
+    </div>
+  );
+};
+
+
+
 
 if (loading) {
   return (
@@ -514,21 +561,23 @@ Clear Filters
 
         </div>
 
-        <div className="productInfo">
+        <div className="product-infocard">
 
-          <div className="rating">
-            ⭐⭐⭐⭐⭐ <span>(4.8)</span>
+
+          <h2 className='product-namecard'>{product.name}</h2>
+
+          <p className='descriptioncard'>{product.description?.slice(0,60)}....</p>
+          <div className="ratingcard">
+            ⭐⭐⭐⭐⭐ <span className='ratingspan'>(5.0)</span>
           </div>
 
-          <h3>{product.name}</h3>
+          <div className="price-boxcard">
+             <span className="new-price">
+               <li> PKR = {product.price}</li>
+             </span>
 
-          <p>{product.description}</p>
-
-          <div className="priceBox">
-            <h4>Rs {product.price}</h4>
-
-            <span className="oldPrice">
-              Rs {Math.floor(product.price * 1.2)}
+            <span className="old-price">
+             <li> PKR = {Math.floor(product.price * 1.2)}</li>
             </span>
           </div>
 

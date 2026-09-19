@@ -2,7 +2,7 @@ import React from 'react'
 import "../Styles/footercomp.css"
 import { FaFacebook } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
-import { FaTwitter } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 const FooterComp = () => {
   return (
     <>
@@ -18,7 +18,7 @@ const FooterComp = () => {
 
       <div className='Blackdivparant'>
         <div className='Blackdiv'>
-          <div className='fontdiv'><h1><b>STAY UPTO DATE ABOUT OUR LATEST OFFERS</b></h1></div>
+          <div ><h1><b className='fontdiv'>STAY UPTO DATE ABOUT OUR LATEST OFFERS</b></h1></div>
           <div className='Buttondiv'>
            <input type="email" placeholder='Enter your email pasword' className='input'/>
             <button className='Buttons'>Subscribe to Newsletter</button>
@@ -32,8 +32,12 @@ const FooterComp = () => {
       
      <div className='Firstdiv'>
       <div className='Headings'><h1><b>SHOP.CO</b></h1></div>
-      <div className='para'>We have clothes that suits your style and which you’re proud to wear. From women to men.</div>
-      <div className='icons'><FaFacebook className='facebook' size={30}/><CiInstagram className='insta' size={30}/><FaTwitter className='tweeter' size={30}/></div>
+      <div className='para'>Your Premium Online Shopping Destination Owned by <b> SAIFULLAH KHAN</b>. <br />We offer the best products at competitive prices with fast and reliable delivery. <br />
+       We have clothes that suits your style and which you’re proud to wear. From women to men.</div>
+      <div className='icons'>
+        <FaFacebook className='facebook' size={35}/>
+        <CiInstagram className='insta' size={35}/>
+        <FaXTwitter className='twitter' size={35}/></div>
      </div>
           
 
@@ -43,7 +47,7 @@ const FooterComp = () => {
         <div className='seconddiv'>
           
           <div className='seconddivchildern'>
-            <div className='Company'>COMPANY</div>
+            <div className='Company'><b>COMPANY</b></div>
             <div className='links'>About</div>
             <div className='links'>Features</div>
             <div className='links'>Work</div>
@@ -51,7 +55,7 @@ const FooterComp = () => {
           </div>
 
           <div className='seconddivchildern'>
-             <div className='Company'>HELP</div>
+             <div className='Company'><b>HELP</b></div>
             <div className='links'>Customer Support</div>
             <div className='links'>Delivery Details</div>
             <div className='links'>Terms & Conditions</div>
@@ -59,7 +63,7 @@ const FooterComp = () => {
           </div>
 
           <div className='seconddivchildern'>
-             <div className='Company'>FAQ</div>
+             <div className='Company'><b>FAQ</b></div>
             <div className='links'>Account</div>
             <div className='links'>Manage Deliveries</div>
             <div className='links'>Orders</div>
@@ -67,7 +71,7 @@ const FooterComp = () => {
           </div>
 
           <div className='seconddivchildern'>
-             <div className='Company'>RESOURCES</div>
+             <div className='Company'><b>RESOURCES</b></div>
             <div className='links'>Free e-Books</div>
             <div className='links'>Development Tutorial</div>
             <div className='links'>How to-Blog</div>

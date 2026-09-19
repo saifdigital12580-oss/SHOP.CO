@@ -237,7 +237,7 @@ DRESS STYLE
 
 
 .Productsbigbox{
-    height: 1000px;
+    height: 1500px;
     width: 60%;
     /* border: 2px solid rgb(64, 64, 209); */
     display: flex;
@@ -461,13 +461,13 @@ DRESS STYLE
     position:absolute;
     top:15px;
     left:15px;
-    background:#ff2d55;
+    background:#249701;
     color:#fff;
     padding:5px 12px;
     border-radius:20px;
     font-size:13px;
     font-weight:bold;
-    z-index:10;
+    z-index:0;
 }
 
 .stockTag{
@@ -620,6 +620,12 @@ DRESS STYLE
     font-size:14px;
     font-weight:600;
     margin-bottom:15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    
 }
 
 
@@ -793,4 +799,409 @@ color:#666;
 
 font-size:70px;
 
+}
+
+
+
+
+
+/* =========================================================
+   FINAL MOBILE SHOP PAGE
+   280px - 400px
+========================================================= */
+
+@media screen and (min-width: 280px) and (max-width: 400px) {
+    /* ================= PAGE ================= */
+    html,
+    body,
+    #root {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    /* ================= TOP BREADCRUMB ================= */
+    .bar1 {
+        width: 100% !important;
+        height: 38px !important;
+        padding: 0 8px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        font-size: 10px !important;
+        color: #777 !important;
+    }
+    /* ================= SEARCH ================= */
+    .shopSearchBox {
+        width: calc(100% - 16px) !important;
+        margin: 8px auto 12px auto !important;
+        padding: 0 !important;
+    }
+    .shopSearchBox input {
+        width: 100% !important;
+        height: 42px !important;
+        padding: 0 13px !important;
+        font-size: 13px !important;
+        border-radius: 10px !important;
+        background: #fff !important;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08) !important;
+    }
+    /* =====================================================
+       MAIN BOX
+    ===================================================== */
+    .bigbox {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        overflow: visible !important;
+    }
+    /* =====================================================
+       HIDE DESKTOP FILTER
+    ===================================================== */
+    .Filtersbigbox {
+        display: none !important;
+        visibility: hidden !important;
+        width: 0 !important;
+        min-width: 0 !important;
+        height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    /* =====================================================
+       PRODUCTS AREA
+    ===================================================== */
+    .Productsbigbox {
+        width: 100% !important;
+        height: auto !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 7px !important;
+        display: block !important;
+    }
+    /* =====================================================
+       TITLE + SORT
+    ===================================================== */
+    .firstdiv {
+        width: 100% !important;
+        height: 48px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        background: transparent !important;
+    }
+    .firstdiv1 {
+        width: auto !important;
+        height: auto !important;
+        padding: 0 !important;
+        font-size: 22px !important;
+        font-weight: 800 !important;
+    }
+    .firstdiv2 {
+        width: auto !important;
+        height: auto !important;
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        gap: 5px !important;
+    }
+    .firstdiv2 span {
+        font-size: 9px !important;
+        color: #777 !important;
+        white-space: nowrap !important;
+    }
+    .searchletters {
+        width: 105px !important;
+        min-width: 105px !important;
+        height: 34px !important;
+        margin: 0 !important;
+        padding: 0 7px !important;
+        border: 1px solid #ddd !important;
+        border-radius: 9px !important;
+        background: #fff !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .05) !important;
+        font-size: 10px !important;
+     
+        border: 1px solid rgb(181, 180, 180) !important;
+    }
+    /* =====================================================
+       PRODUCT GRID
+    ===================================================== */
+    .secondshoppage {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 5px 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 9px !important;
+        overflow: visible !important;
+    }
+    /* =====================================================
+       PRODUCT CARD
+    ===================================================== */
+    .shopProductCard {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 0 7px 0 !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+        background: #fff !important;
+        box-shadow: 0 2px 9px rgba(0, 0, 0, .09) !important;
+        transform: none !important;
+    }
+    .shopProductCard:hover {
+        transform: none !important;
+        box-shadow: 0 2px 9px rgba(0, 0, 0, .09) !important;
+    }
+    /* =====================================================
+       IMAGE
+    ===================================================== */
+    .imageBox {
+        position: relative !important;
+        width: 100% !important;
+        height: 112px !important;
+        overflow: hidden !important;
+        border-radius: 10px 10px 0 0 !important;
+        background: #f3f3f3 !important;
+    }
+    .shopProductImage {
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+        object-fit: cover !important;
+        transform: none !important;
+    }
+    .shopProductCard:hover .shopProductImage {
+        transform: none !important;
+    }
+    /* =====================================================
+       DISCOUNT
+    ===================================================== */
+    .saleTag {
+        position: absolute !important;
+        top: 6px !important;
+        left: 6px !important;
+        padding: 3px 6px !important;
+        border-radius: 10px !important;
+        font-size: 8px !important;
+        font-weight: 700 !important;
+        z-index: 10 !important;
+    }
+    /* =====================================================
+       STOCK
+    ===================================================== */
+    .stockTag,
+    .outTag {
+        top: 6px !important;
+        right: 6px !important;
+        padding: 3px 5px !important;
+        border-radius: 8px !important;
+        font-size: 7px !important;
+    }
+    /* =====================================================
+       HIDE QUICK VIEW ON MOBILE
+    ===================================================== */
+    .overlay {
+        display: none !important;
+    }
+    /* =====================================================
+       PRODUCT INFO
+    ===================================================== */
+    .productInfo {
+        width: 100% !important;
+        padding: 7px 8px 4px 8px !important;
+    }
+    .productInfo h3 {
+        width: 100% !important;
+        height: 29px !important;
+        margin: 0 0 3px 0 !important;
+        padding: 0 !important;
+        font-size: 12px !important;
+        line-height: 14px !important;
+        font-weight: 700 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        text-align: left !important;
+    }
+    .productInfo p {
+        width: 100% !important;
+        height: 28px !important;
+        margin: 0 0 3px 0 !important;
+        padding: 0 !important;
+        font-size: 9px !important;
+        line-height: 13px !important;
+        color: #777 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        text-align: left !important;
+    }
+    /* =====================================================
+       RATING
+    ===================================================== */
+    .rating {
+        width: 100% !important;
+        height: 18px !important;
+        margin: 2px 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        font-size: 10px !important;
+        white-space: nowrap !important;
+    }
+    .rating span {
+        margin-left: 3px !important;
+        font-size: 9px !important;
+        color: #555 !important;
+    }
+    /* =====================================================
+       PRICE
+    ===================================================== */
+    .priceBox {
+        width: 100% !important;
+        height: 25px !important;
+        margin: 3px 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 5px !important;
+    }
+    .priceBox h4 {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 15px !important;
+        font-weight: 800 !important;
+    }
+    .oldPrice {
+        font-size: 9px !important;
+        color: #999 !important;
+    }
+    /* =====================================================
+       SOLD
+    ===================================================== */
+    .soldText {
+        width: 100% !important;
+        height: 16px !important;
+        margin: 2px 0 5px 0 !important;
+        padding: 0 !important;
+        font-size: 8px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center;
+        color: #0b8f3d !important;
+        border-top: 1px solid rgb(152, 149, 149) !important;
+        border-bottom: 1px solid rgb(152, 149, 149) !important;
+        
+    }
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+    .productBtns {
+        width: 100% !important;
+        display: flex !important;
+        gap: 5px !important;
+        margin: 0 !important;
+    }
+    .viewBtn,
+    .cartBtn {
+        width: 50% !important;
+        min-width: 0 !important;
+        height: 30px !important;
+        padding: 0 3px !important;
+        border: none !important;
+        border-radius: 7px !important;
+        font-size: 8px !important;
+        font-weight: 700 !important;
+        white-space: nowrap !important;
+    }
+    .viewBtn {
+        background: #000 !important;
+        color: #fff !important;
+    }
+    .cartBtn {
+        background: #f1f1f1 !important;
+        color: #111 !important;
+    }
+    /* =====================================================
+       EMPTY PRODUCTS
+    ===================================================== */
+    .emptyBox {
+        width: 100% !important;
+        min-height: 250px !important;
+        grid-column: 1 / -1 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    .emptyBox h1 {
+        font-size: 40px !important;
+    }
+    .emptyBox h2 {
+        font-size: 18px !important;
+    }
+    .emptyBox p {
+        font-size: 11px !important;
+    }
+    /* =====================================================
+       PAGINATION
+    ===================================================== */
+    .pagination {
+        width: 100% !important;
+        margin: 15px 0 25px 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 4px !important;
+    }
+    .pagination button {
+        min-width: 25px !important;
+        height: 28px !important;
+        padding: 0 6px !important;
+        border-radius: 7px !important;
+        font-size: 9px !important;
+    }
+    /* =====================================================
+       OLD PRODUCT CLASSES — FORCE MOBILE SIZE
+    ===================================================== */
+    .main-box {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .product-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        border-radius: 10px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,.08) !important;
+    }
+    .image-box {
+        height: 112px !important;
+    }
+    /* =====================================================
+       DISABLE DESKTOP HOVER EFFECTS
+    ===================================================== */
+    .product-card:hover,
+    .shopProductCard:hover {
+        transform: none !important;
+        scale: 1 !important;
+    }
+    .card:hover {
+        scale: 1 !important;
+        backdrop-filter: none !important;
+    }
 }

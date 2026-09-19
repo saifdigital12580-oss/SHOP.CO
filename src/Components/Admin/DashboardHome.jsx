@@ -6,6 +6,7 @@ import { FaArrowUp } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { IoPeopleSharp } from "react-icons/io5";
 import { FaBoxOpen } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import "../../Styles/dashboardhome.css";
 import DashboardRecentOrders from "./DashboardRecentOrders";
 import DashboardTimeline from "./DashboardTimeline";
@@ -18,7 +19,7 @@ import DashboardCategoryChart from "./DashboardCategoryChart";
 
 
 const DashboardHome = () => {
-
+const navigate = useNavigate();
 
 
 const [stats, setStats] =useState({
@@ -36,7 +37,7 @@ useEffect(() => {
 const fetchDashboard = async () => {
   try {
     const response = await fetch(
-      "https://shop-cobackend.onrender.com/dashboard/stats"
+      "https://sk-store-theta.vercel.app/dashboard/stats"
     );
 
     const data = await response.json();
@@ -72,7 +73,8 @@ const fetchDashboard = async () => {
     </p>
   </div>
   <div className="heroRight">
-    <button className="heroBtn addProductBtn">
+    <button className="heroBtn addProductBtn"
+    onClick={() => navigate("/adminpanel/shoppingform")}>
       ➕ Add Product
     </button>
     <button className="heroBtn exportBtn">

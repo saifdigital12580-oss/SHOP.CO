@@ -89,3 +89,116 @@ color:#22c55e;
 font-size:18px;
 
 }
+
+/* =========================================
+   LATEST CUSTOMERS - MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .customerCard {
+        width: 100%;
+        min-width: 0;
+
+        padding: 18px;
+
+        margin-top: 20px;
+
+        border-radius: 18px;
+
+        overflow: hidden;
+    }
+
+    .customerCard h2 {
+        font-size: 21px;
+
+        line-height: 1.4;
+
+        margin-bottom: 18px;
+    }
+
+    .customerItem {
+        width: 100%;
+        min-width: 0;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        padding: 15px 0;
+    }
+
+    .avatar {
+        width: 42px;
+        height: 42px;
+
+        min-width: 42px;
+
+        font-size: 18px;
+    }
+
+    .customerInfo {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .customerInfo h4 {
+        font-size: 14px;
+
+        line-height: 1.4;
+
+        overflow-wrap: anywhere;
+
+        word-break: break-word;
+    }
+
+    .customerInfo p {
+        max-width: 100%;
+
+        font-size: 12px;
+
+        line-height: 1.5;
+
+        overflow-wrap: anywhere;
+
+        word-break: break-word;
+    }
+
+    .online {
+        flex-shrink: 0;
+
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .customerCard {
+        padding: 14px;
+    }
+
+    .customerItem {
+        gap: 9px;
+    }
+
+    .avatar {
+        width: 36px;
+        height: 36px;
+
+        min-width: 36px;
+
+        font-size: 16px;
+    }
+
+    .customerInfo h4 {
+        font-size: 13px;
+    }
+
+    .customerInfo p {
+        font-size: 11px;
+    }
+
+}

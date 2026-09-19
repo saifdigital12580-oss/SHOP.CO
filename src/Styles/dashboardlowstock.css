@@ -89,3 +89,126 @@ color:#22c55e;
 font-weight:bold;
 
 }
+
+/* =========================================
+   LOW STOCK - MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .lowStockCard {
+        width: 100%;
+        min-width: 0;
+
+        padding: 18px;
+
+        margin-top: 20px;
+
+        border-radius: 18px;
+
+        overflow: hidden;
+    }
+
+    .lowStockCard h2 {
+        font-size: 20px;
+
+        line-height: 1.5;
+
+        margin-bottom: 18px;
+
+        overflow-wrap: anywhere;
+    }
+
+    .stockItem {
+        width: 100%;
+        min-width: 0;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        padding: 14px 0;
+    }
+
+    .stockItem img {
+        width: 55px;
+        height: 55px;
+
+        min-width: 55px;
+
+        border-radius: 12px;
+
+        object-fit: cover;
+    }
+
+    .stockInfo {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .stockInfo h4 {
+        font-size: 14px;
+
+        line-height: 1.5;
+
+        margin-bottom: 8px;
+
+        overflow-wrap: anywhere;
+
+        word-break: break-word;
+    }
+
+    .stockInfo p {
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+    .stockInfo span {
+        display: inline-block;
+
+        padding: 4px 9px;
+
+        margin-left: 6px;
+
+        font-size: 12px;
+
+        white-space: nowrap;
+    }
+
+    .allGood {
+        padding: 15px 10px;
+
+        font-size: 13px;
+
+        line-height: 1.6;
+
+        overflow-wrap: anywhere;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .lowStockCard {
+        padding: 14px;
+    }
+
+    .stockItem {
+        gap: 9px;
+    }
+
+    .stockItem img {
+        width: 45px;
+        height: 45px;
+
+        min-width: 45px;
+    }
+
+    .stockInfo h4 {
+        font-size: 12px;
+    }
+
+}

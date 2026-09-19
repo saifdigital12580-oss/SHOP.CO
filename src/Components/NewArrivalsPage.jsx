@@ -36,7 +36,7 @@ const handleWishlist = (item) => {
             try {
 
                 const response = await fetch(
-                    "https://shop-cobackend.onrender.com/product/all-products"
+                    "https://sk-store-theta.vercel.app/product/all-products"
                 );
 
                 const data = await response.json();
@@ -145,9 +145,9 @@ const handleWishlist = (item) => {
   />
 </div>
 
-                                <div className="discount">
-                                    -20%
-                                </div>
+<div className="discountcard">
+  -{item.discount || 20}%
+</div>
 
                                 <div className="image-box">
 
@@ -158,31 +158,31 @@ const handleWishlist = (item) => {
 
                                 </div>
 
-                                <div className="product-info">
+                                <div className="product-infocard">
 
                                     <span className="category">
                                         {item.category}
                                     </span>
 
-                                    <h2 className="product-name">
-                                        {item.productName}
+                                    <h2 className="product-namecard">
+                                        {item.name}
                                     </h2>
 
-                                    <p className="description">
+                                    <p className="descriptioncard">
 
                                         {item.description?.slice(0,60)}...
 
                                     </p>
 
-                                    <div className="rating">
+                                    <div className="ratingcard">
 
                                         ⭐⭐⭐⭐⭐
 
-                                        <span>4.9</span>
+                                        <span className="ratingspan">5.0</span>
 
                                     </div>
 
-                                    <div className="price-box">
+                                    <div className="price-boxcard">
 
                                         <span className="new-price">
 

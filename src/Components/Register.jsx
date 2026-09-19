@@ -19,7 +19,7 @@ const Register = () => {
 
     const handleRegister = async () => {
   try {
-    const response = await fetch("https://shop-cobackend.onrender.com/auth/register-user", {
+    const response = await fetch("https://sk-store-theta.vercel.app/auth/register-user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

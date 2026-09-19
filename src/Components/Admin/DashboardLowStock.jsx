@@ -14,7 +14,7 @@ fetchProducts();
 const fetchProducts=async()=>{
 
 const response=await fetch(
-"https://shop-cobackend.onrender.com/dashboard/low-stock"
+"https://sk-store-theta.vercel.app/dashboard/low-stock"
 );
 
 const data=await response.json();

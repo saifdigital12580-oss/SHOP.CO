@@ -25,7 +25,8 @@ const [userName, setUserName] = useState("");
 
   const handlelogin = async () => {
   try {
-    const response =await fetch("https://shop-cobackend.onrender.com/auth/login-user", {
+    // http://localhost:1000
+    const response =await fetch("https://sk-store-theta.vercel.app/auth/login-user", {
   method: "POST",
   credentials: "include",
   headers: {

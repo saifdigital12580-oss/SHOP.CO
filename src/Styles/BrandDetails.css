@@ -836,3 +836,682 @@ transition:.4s;
 transform:translateY(-10px);
 
 }
+
+
+
+
+
+
+/* =========================================================
+   MOBILE RESPONSIVE - BRAND DETAILS
+========================================================= */
+
+html,
+body,
+#root {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.brand-details {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MOBILE HERO
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .brand-banner {
+        width: 100%;
+        height: 650px;
+        min-height: 650px;
+
+        background-size: cover;
+        background-position: center;
+
+        box-sizing: border-box;
+    }
+
+    .banner-overlay {
+        width: 100%;
+        height: 100%;
+
+        padding: 30px 24px;
+
+        box-sizing: border-box;
+
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .banner-overlay h1 {
+        font-size: 58px;
+        line-height: 1;
+        margin: 0 0 25px 0;
+        letter-spacing: 1px;
+    }
+
+    .banner-overlay p {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 18px;
+        line-height: 30px;
+
+        margin: 0;
+    }
+
+    .banner-overlay button {
+        width: 100%;
+        max-width: 330px;
+
+        height: 58px;
+
+        margin-top: 30px;
+
+        font-size: 18px;
+    }
+
+
+    /* =====================================================
+       BRAND INFO
+    ===================================================== */
+
+    .brand-info {
+        width: calc(100% - 30px);
+        margin: 45px auto;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 15px;
+
+        box-sizing: border-box;
+    }
+
+    .info-card {
+        width: 100%;
+        min-width: 0;
+
+        padding: 25px 10px;
+
+        border-radius: 18px;
+
+        box-sizing: border-box;
+    }
+
+    .info-card h2 {
+        font-size: 28px;
+        margin: 0 0 8px 0;
+    }
+
+    .info-card span {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       ABOUT BRAND
+    ===================================================== */
+
+    .about-brand {
+        width: calc(100% - 30px);
+        margin: 55px auto;
+
+        box-sizing: border-box;
+    }
+
+    .about-brand h2 {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .about-brand p {
+        font-size: 16px;
+        line-height: 28px;
+        color: #666;
+    }
+
+
+    /* =====================================================
+       SHOP BY CATEGORY
+    ===================================================== */
+
+    .brand-category {
+        width: calc(100% - 30px);
+        margin: 60px auto;
+
+        box-sizing: border-box;
+    }
+
+    .brand-category h2 {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 25px;
+    }
+
+    .category-grid {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 15px;
+
+        box-sizing: border-box;
+    }
+
+    .category-card {
+        width: 100%;
+        min-width: 0;
+
+        padding: 30px 10px;
+
+        border-radius: 18px;
+
+        box-sizing: border-box;
+    }
+
+    .category-card span {
+        font-size: 42px;
+    }
+
+    .category-card h3 {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+
+    /* =====================================================
+       SEARCH / FILTER
+    ===================================================== */
+
+    .product-toolbar {
+        width: calc(100% - 30px);
+
+        margin: 40px auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 12px;
+
+        box-sizing: border-box;
+    }
+
+    .product-toolbar input,
+    .product-toolbar select {
+        width: 100%;
+        max-width: 100%;
+
+        height: 52px;
+
+        box-sizing: border-box;
+
+        font-size: 16px;
+    }
+
+    .product-toolbar input {
+        padding: 0 20px;
+    }
+
+    .product-toolbar select {
+        padding: 0 18px;
+    }
+
+
+    /* =====================================================
+       PRODUCTS
+    ===================================================== */
+
+    .brand-products {
+        width: calc(100% - 30px);
+        margin: 60px auto;
+
+        box-sizing: border-box;
+    }
+
+    .brand-products h2 {
+        font-size: 32px;
+        line-height: 1.2;
+
+        margin-bottom: 25px;
+    }
+
+    .products-grid {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+
+        box-sizing: border-box;
+    }
+
+    .product-card {
+        width: 100%;
+        min-width: 0;
+
+        border-radius: 15px;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 190px;
+
+        object-fit: cover;
+    }
+
+    .product-content {
+        padding: 12px;
+    }
+
+    .product-card h3 {
+        padding: 0;
+
+        font-size: 15px;
+        line-height: 21px;
+
+        margin: 0 0 8px 0;
+
+        display: -webkit-box;
+        /* -webkit-line-clamp: 2; */
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
+    }
+
+    .rating {
+        padding: 0;
+        margin: 6px 0;
+
+        gap: 2px;
+
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 17px;
+
+        margin: 8px 0 12px 0;
+    }
+
+    .product-buttons {
+        padding: 0;
+
+        gap: 6px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .product-buttons button {
+        height: 38px;
+
+        padding: 0 8px;
+
+        font-size: 11px;
+
+        border-radius: 20px;
+    }
+
+    .product-buttons button:first-child {
+        flex: 1;
+    }
+
+    .product-buttons a button {
+        width: 38px;
+
+        padding: 0;
+
+        flex-shrink: 0;
+    }
+
+
+    /* =====================================================
+       DISCOUNT
+    ===================================================== */
+
+    .discount {
+        top: 8px;
+        left: 8px;
+
+        padding: 4px 7px;
+
+        border-radius: 12px;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       WISHLIST
+    ===================================================== */
+
+    .wishlist-btn {
+        top: 8px;
+        right: 8px;
+
+        width: 32px;
+        height: 32px;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       CUSTOMER REVIEWS
+    ===================================================== */
+
+    .reviews {
+        width: calc(100% - 30px);
+
+        margin: 65px auto;
+
+        box-sizing: border-box;
+    }
+
+    .reviews h2 {
+        font-size: 32px;
+        line-height: 1.2;
+
+        margin-bottom: 25px;
+    }
+
+    .review-grid {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+
+        box-sizing: border-box;
+    }
+
+    .review-card {
+        width: 100%;
+        min-width: 0;
+
+        padding: 25px 18px;
+
+        border-radius: 18px;
+
+        line-height: 28px;
+
+        font-size: 16px;
+
+        box-sizing: border-box;
+    }
+
+    .review-card p {
+        margin: 15px 0;
+    }
+
+    .review-card h4 {
+        margin-top: 20px;
+
+        font-size: 16px;
+
+        line-height: 25px;
+    }
+
+
+    /* =====================================================
+       SIMILAR BRANDS
+    ===================================================== */
+
+    .similar-brands {
+        width: calc(100% - 30px);
+
+        margin: 65px auto;
+
+        box-sizing: border-box;
+    }
+
+    .similar-brands h2 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .similar-grid {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        margin-top: 25px;
+
+        box-sizing: border-box;
+    }
+
+    .similar-grid a {
+        width: 100%;
+
+        padding: 14px 8px;
+
+        text-align: center;
+
+        font-size: 13px;
+
+        border-radius: 30px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       NEWSLETTER
+    ===================================================== */
+
+    .newsletter {
+        width: 100%;
+
+        margin-top: 70px;
+
+        padding: 55px 20px;
+
+        box-sizing: border-box;
+    }
+
+    .newsletter h2 {
+        font-size: 32px;
+        line-height: 1.2;
+
+        margin-bottom: 15px;
+    }
+
+    .newsletter p {
+        font-size: 15px;
+        line-height: 25px;
+
+        margin: 0 auto 25px;
+
+        max-width: 350px;
+    }
+
+    .newsletter-box {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 12px;
+
+        box-sizing: border-box;
+    }
+
+    .newsletter-box input {
+        width: 100%;
+        max-width: 100%;
+
+        height: 52px;
+
+        padding: 0 18px;
+
+        box-sizing: border-box;
+
+        font-size: 15px;
+    }
+
+    .newsletter-box button {
+        width: 100%;
+
+        height: 52px;
+
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   320px - 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .brand-banner {
+        height: 620px;
+        min-height: 620px;
+    }
+
+    .banner-overlay {
+        padding: 25px 20px;
+    }
+
+    .banner-overlay h1 {
+        font-size: 50px;
+    }
+
+    .banner-overlay p {
+        font-size: 17px;
+        line-height: 28px;
+    }
+
+    .banner-overlay button {
+        height: 55px;
+        max-width: 100%;
+    }
+
+
+    .brand-info {
+        width: calc(100% - 24px);
+        gap: 10px;
+    }
+
+    .info-card {
+        padding: 22px 8px;
+    }
+
+    .info-card h2 {
+        font-size: 24px;
+    }
+
+
+    .brand-category,
+    .brand-products,
+    .about-brand,
+    .reviews,
+    .similar-brands,
+    .product-toolbar {
+        width: calc(100% - 24px);
+    }
+
+
+    .brand-category h2,
+    .brand-products h2,
+    .reviews h2,
+    .similar-brands h2,
+    .about-brand h2 {
+        font-size: 28px;
+    }
+
+
+    .category-card {
+        padding: 25px 8px;
+    }
+
+    .category-card span {
+        font-size: 38px;
+    }
+
+    .category-card h3 {
+        font-size: 16px;
+    }
+
+
+    .products-grid {
+        gap: 10px;
+    }
+
+    .product-card img {
+        height: 175px;
+    }
+
+    .product-content {
+        padding: 10px;
+    }
+
+    .product-card h3 {
+        font-size: 14px;
+        line-height: 19px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    .product-buttons button {
+        height: 36px;
+        font-size: 10px;
+    }
+
+    .product-buttons a button {
+        width: 36px;
+    }
+
+
+    .review-grid {
+        gap: 10px;
+    }
+
+    .review-card {
+        padding: 22px 14px;
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .review-card h4 {
+        font-size: 14px;
+    }
+
+
+    .newsletter {
+        padding: 50px 18px;
+    }
+
+}

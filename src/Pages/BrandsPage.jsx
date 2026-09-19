@@ -58,17 +58,13 @@ const BrandsPage = () => {
               alt={brand.name}
             />
 
-            <div className="overlay">
-
-              <h2>{brand.name}</h2>
-
-              <span>{brand.products}+ Products</span>
-
-              <button>
-                View Collection →
-              </button>
-
-            </div>
+        <div className="brand-content">
+  <h2>{brand.name}</h2>
+  <span>{brand.products}+ Products</span>
+  <button>
+    View Collection →
+  </button>
+</div>
 
           </Link>
 

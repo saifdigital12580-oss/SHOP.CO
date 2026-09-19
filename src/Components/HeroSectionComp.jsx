@@ -165,7 +165,7 @@ useEffect(() => {
         try {
 
             const response = await fetch(
-                "https://shop-cobackend.onrender.com/product/all-products"
+                "https://sk-store-theta.vercel.app/product/all-products"
             );
 
             const data = await response.json();
@@ -240,8 +240,6 @@ console.log(products);
           <p className='names3'>
            <Link to="/brand/gucci">GUCCI</Link>
             </p>
-        
-          
           <h1 className="names4">
            <Link to="/brand/prada">PRADA</Link>
             </h1>
@@ -268,7 +266,7 @@ console.log(products);
         
       
  <div className="products-grid">
-  {products.slice(0, 5).map((item) => (
+  {products.slice(0, 6).map((item) => (
 
     <div className="product-card" key={item._id}>
 
@@ -287,54 +285,63 @@ console.log(products);
 
       {/* Discount */}
 
-      <div className="discount">
-        -20%
-      </div>
+<div className="discountcard">
+  -{item.discount || 20}%
+</div>
 
       {/* Image */}
 
       <div className="image-box">
-        <img src={item.image} alt={item.productName} />
+        <img src={item.image} alt={item.name} />
       </div>
+      
 
       {/* Bottom */}
 
-      <div className="product-info">
+      <div className="product-infocard">
 
-        <span className="category">
+        <div className="category">
           {item.category}
-        </span>
+        </div>
 
-        <h2 className="product-name">
-          {item.productName}
+        <h2 className="product-namecard">
+          {item.name}
         </h2>
 
-        <p className="description">
+        <p className="descriptioncard">
           {item.description?.slice(0,60)}...
         </p>
 
-        <div className="rating">
+        <div className="ratingcard">
           ⭐⭐⭐⭐⭐
-          <span>4.9</span>
+          <span className='ratingspan'>5.0</span>
         </div>
 
-       <div className="price-box">
+       <div className="price-boxcard">
 
   <span className="old-price">
-    Rs {item.oldPrice || Math.round(item.price * 1.4)}
+   <li> PKR = {item.oldPrice || Math.round(item.price * 1.4)}</li>
   </span>
 
+  <div className="discountcard">
+  -{Math.round(
+    (((item.oldPrice || Math.round(item.price * 1.4)) - item.price) /
+      (item.oldPrice || Math.round(item.price * 1.4))) *
+      100
+  )}%
+</div>
+
   <span className="new-price">
-    Rs {item.price}
+   <li> PKR = {item.price}</li>
   </span>
 
   <span className="save-price">
-    Save {Math.round(((item.oldPrice || Math.round(item.price * 1.4)) - item.price))}
+   <li> Save = {Math.round(((item.oldPrice || Math.round(item.price * 1.4)) - item.price))}</li>
   </span>
 
 </div>
 
-        <button
+        <button className='product-cardbtn'
         onClick={()=>navigate(`/singlepageproduct/${item._id}`)}
         >
           View Product
@@ -352,34 +359,35 @@ console.log(products);
 
 
 
-      <div className='divbuttonviewall'> <button className='water-btn '  onClick={() => navigate("/Shoppage")} >
+      <div className='divbuttonviewall'> 
+      <button className='water-btn '  onClick={() => navigate("/Shoppage")} >
       View All
       </button></div>
 
-    <div className='newarrivals'><h1><b><li>Best Selling Products</li></b></h1></div>
+    <div className='bestsellingproducts'><h1><b><li>Best Selling Products</li></b></h1></div>
 
 
 
         <div className='linebyline'>
       
  <div className="products-grid">
-  {products.slice(5, 17).map((item) => (
+  {products.slice(6, 17).map((item) => (
 
     <div className="product-card" key={item._id}>
 
       {/* Wishlist */}
 
 <div
- className="wishlist"
+ className="heroWishlist"
  onClick={() => handleWishlist(item)}
 >
 <FaHeart color={ isWishlist(item._id) ? "red" : "#cfcfcf" } /> </div>
 
       {/* Discount */}
 
-      <div className="discount">
-        -20%
-      </div>
+<div className="discountcard">
+  -{item.discount || 20}%
+</div>
 
       {/* Image */}
 
@@ -391,36 +399,36 @@ console.log(products);
 
       <div className="product-info">
 
-        <span className="category">
+        <div className="category">
           {item.category}
-        </span>
+        </div>
 
-        <h2 className="product-name">
-          {item.productName}
+        <h2 className="product-namecard">
+          {item.name}
         </h2>
 
-        <p className="description">
+        <p className="descriptioncard">
           {item.description?.slice(0,60)}...
         </p>
 
-        <div className="rating">
+        <div className="ratingcard">
           ⭐⭐⭐⭐⭐
-          <span>4.9</span>
+          <div className='ratingspan'>5.0</div>
         </div>
 
-<div className="price-box">
+<div className="price-boxcard">
 
-  <span className="old-price">
-    Rs {item.oldPrice || Math.round(item.price * 1.4)}
-  </span>
+  <div className="old-price">
+   <li>PKR = {item.oldPrice || Math.round(item.price * 1.4)} </li>
+  </div>
 
-  <span className="new-price">
-    Rs {item.price}
-  </span>
+  <div className="new-price">
+    <li> PKR = {item.price}</li>
+  </div>
 
-  <span className="save-price">
-    Save {Math.round(((item.oldPrice || Math.round(item.price * 1.4)) - item.price))}
-  </span>
+  <div className="save-price">
+   <li> Save = {Math.round(((item.oldPrice || Math.round(item.price * 1.4)) - item.price))} </li>
+  </div>
 
 </div>
         <button
@@ -468,7 +476,8 @@ console.log(products);
 <div className='happycustomers'><div className='fonts'><h1><b>Our Happy Coustomers</b></h1></div>
 <div className='controllsarrow'>
 <div className='Arrows'><FaArrowLeft /></div>
-<div className='Arrows2'><FaArrowRight /></div></div>
+<div className='Arrows2'><FaArrowRight /></div>
+</div>
 </div>
 
 

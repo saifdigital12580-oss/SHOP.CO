@@ -105,7 +105,7 @@ const BrandDetails = () => {
 const [products, setProducts] = useState([]);
 
 useEffect(() => {
-  fetch("https://shop-cobackend.onrender.com/product/all-products")
+  fetch("https://sk-store-theta.vercel.app/product/all-products")
     .then((res) => res.json())
     .then((data) => {
       setProducts(data.products);
@@ -328,17 +328,10 @@ className="brand-banner"
 
 
 
-      <section className="brand-info">
-
 <section
-ref={infoRef}
-className="brand-info"
-></section>
-
-
-
-
-
+    ref={infoRef}
+    className="brand-info"
+>
         <div className="info-card">
           <h2>{brand.products}</h2>
           <span>Products</span>
@@ -358,8 +351,20 @@ className="brand-info"
           <h2>{brand.founded}</h2>
           <span>Founded</span>
         </div>
+</section>
 
-      </section>
+
+
+
+
+      
+
+
+
+
+
+
+
 
       <section className="about-brand">
 

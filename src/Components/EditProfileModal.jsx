@@ -24,7 +24,8 @@ const EditProfileModal = ({ user, onClose, onUpdate }) => {
       setLoading(true);
 
       const response = await fetch(
-        "https://shop-cobackend.onrender.com/auth/update-profile",
+        "https://sk-store-theta.vercel.app/auth/update-profile",
+        // https://sk-store-theta.vercel.app
         {
           method: "PUT",
           credentials: "include",

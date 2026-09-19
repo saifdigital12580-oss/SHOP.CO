@@ -508,6 +508,28 @@ height:240px;
 
 }
 
+.banner-left button{
+      
+        width: calc(100% - 58px);
+        max-width: none;
+        height: 52px;
+
+        margin: 8px auto 0;
+
+        border-radius: 13px;
+
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+
+
+    }
+    .banner-left button:active {
+        transform: scale(0.97);
+    }
+
 }
 
 

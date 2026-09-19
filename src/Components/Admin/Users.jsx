@@ -9,7 +9,7 @@ const Users = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch( "https://shop-cobackend.onrender.com/auth/get-user", {
+      const response = await fetch( "https://sk-store-theta.vercel.app/auth/get-user", {
        credentials: "include",
      });
 
@@ -41,7 +41,7 @@ const handleDelete = async (id) => {
 
   try {
     const response = await fetch(
-      `https://shop-cobackend.onrender.com/auth/delete-users/${id}`,
+      `https://sk-store-theta.vercel.app/auth/delete-users/${id}`,
       {
         method: "DELETE",
         credentials: "include",
@@ -75,7 +75,7 @@ const handleDelete = async (id) => {
   // 
 //   try {
 //     const response = await fetch(
-//       "https://shop-cobackend.onrender.com/auth/delete-users",
+//       "https://sk-store-theta.vercel.app/auth/delete-users",
 //       {
 //         method: "DELETE",
 //         headers: {

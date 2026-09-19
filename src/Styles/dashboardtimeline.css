@@ -113,3 +113,129 @@ color:#999;
 font-weight:600;
 
 }
+
+
+/* =========================================
+   RECENT ACTIVITY - MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .timelineCard {
+        width: 100%;
+        min-width: 0;
+
+        padding: 18px;
+
+        margin-top: 20px;
+
+        border-radius: 18px;
+
+        overflow: hidden;
+    }
+
+    .timelineHeader {
+        gap: 10px;
+
+        margin-bottom: 18px;
+    }
+
+    .timelineHeader h2 {
+        font-size: 21px;
+
+        line-height: 1.4;
+    }
+
+    .timelineHeader span {
+        flex-shrink: 0;
+
+        padding: 5px 10px;
+
+        font-size: 12px;
+    }
+
+    .timelineItem {
+        width: 100%;
+        min-width: 0;
+
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+        padding: 15px 0;
+    }
+
+    .timelineIcon {
+        width: 40px;
+        height: 40px;
+
+        min-width: 40px;
+
+        font-size: 19px;
+    }
+
+    .timelineContent {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .timelineContent h4 {
+        font-size: 13px;
+
+        line-height: 1.5;
+
+        overflow-wrap: anywhere;
+    }
+
+    .timelineContent p {
+        font-size: 12px;
+
+        line-height: 1.5;
+
+        overflow-wrap: anywhere;
+    }
+
+    .timelineItem small {
+        flex-shrink: 0;
+
+        font-size: 10px;
+
+        white-space: nowrap;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .timelineCard {
+        padding: 14px;
+    }
+
+    .timelineItem {
+        gap: 8px;
+    }
+
+    .timelineIcon {
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+
+        font-size: 16px;
+    }
+
+    .timelineContent h4 {
+        font-size: 12px;
+    }
+
+    .timelineContent p {
+        font-size: 11px;
+    }
+
+    .timelineItem small {
+        font-size: 9px;
+    }
+
+}

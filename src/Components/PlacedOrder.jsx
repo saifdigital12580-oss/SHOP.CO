@@ -7,7 +7,7 @@ const PlacedOrder = () => {
 
     useEffect(()=>{
 
-        fetch("https://shop-cobackend.onrender.com/order/all-orders")
+        fetch("https://sk-store-theta.vercel.app/order/all-orders")
         .then(res=>res.json())
         .then(data=>{
             setOrders(data.orders);

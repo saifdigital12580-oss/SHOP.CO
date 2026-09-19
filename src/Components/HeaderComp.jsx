@@ -26,7 +26,7 @@ import { FaHeart } from "react-icons/fa";
 
 const HeaderComp = () => {
 const [showWishlist, setShowWishlist] = useState(false);
-
+const [menuOpen, setMenuOpen] = useState(false);
 
 const {
   wishlist,
@@ -49,7 +49,7 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-    fetch("https://shop-cobackend.onrender.com/order/all-orders")
+    fetch("https://sk-store-theta.vercel.app/order/all-orders")
       .then(res => res.json())
       .then(data => setOrders(data.orders));
 }, []);
@@ -78,7 +78,7 @@ const { cartItems, totalItems } = useCart();
   console.log("Logout clicked");
 
   try {
-    const response = await fetch("https://shop-cobackend.onrender.com/auth/logout-user", {
+    const response = await fetch("https://sk-store-theta.vercel.app/auth/logout-user", {
       method: "POST",
       credentials: "include",
     });
@@ -95,6 +95,11 @@ const { cartItems, totalItems } = useCart();
     console.log(error);
   }
 }
+
+
+const closeMobileMenu = () => {
+  setMenuOpen(false);
+};
   return (
     <>
       <div className="Topbar">
@@ -103,15 +108,23 @@ const { cartItems, totalItems } = useCart();
       </div>
 
       <div className="Header">
-        <div className="logo_box">
-          <div className="threelines">
-            <VscThreeBars />
-          </div>
 
-          <div className="logo_box" onClick={() => navigate("/")}>
-            SHOP.CO
-          </div>
-        </div>
+ <div className="logo_box">
+  <div
+    className="threelines"
+    onClick={() => setMenuOpen(true)}
+  >
+    <VscThreeBars />
+  </div>
+
+  <div
+    className="logo"
+    onClick={() => navigate("/")}
+  >
+    SHOP.CO
+  </div>
+
+</div>
 
         <div className="pages_bar">
           <div className="ShopNavegate" onClick={() => navigate("/shoppage")}>
@@ -152,12 +165,12 @@ const { cartItems, totalItems } = useCart();
         <div className="shoping-login_bar">
   {showLogin ? (
     <>
-      <div className="search" onClick={() => handleLogout()}>
+      <div className="logicon" onClick={() => handleLogout()}>
         <LuLogOut size={23} />
       </div>
 
       {role === "admin" && (
-  <div className="search">
+  <div className="accounticon">
     <MdOutlineAccountCircle
       size={22}
       onClick={() => navigate("/adminpanel")}
@@ -167,7 +180,7 @@ const { cartItems, totalItems } = useCart();
 )}
 {showLogin && role === "user" && (
   <div
-    className="search"
+    className="accounticon"
     onClick={() => navigate("/profile")}
   >
     <FaUserCircle size={24} />
@@ -175,7 +188,7 @@ const { cartItems, totalItems } = useCart();
 )}
     </>
   ) : (
-    <div className="search">
+    <div className="logicon">
       <LuLogIn size={23}
         onClick={() => navigate("/register")}
       />
@@ -185,7 +198,7 @@ const { cartItems, totalItems } = useCart();
 
 
 
- <div className="cartIcon" onClick={() => navigate("/placedorders")}>
+ <div className="cartIconordersIcon" onClick={() => navigate("/placedorders")}>
 
    <MdAddShoppingCart size={25} />
 
@@ -508,6 +521,78 @@ Open Wishlist
 </div>
         
       </div>
+
+
+
+
+
+{/* ================= MOBILE MENU ================= */}
+
+<div
+  className={`mobile-nav ${menuOpen ? "show" : "hidenav"}`}
+>
+
+  <button
+    className="mobile-close"
+    onClick={closeMobileMenu}
+  >
+    ✕
+  </button>
+
+  <div className="mobile-menu-logo">
+    SHOP.CO
+  </div>
+
+  <div className="mobile-menu-links">
+
+    <div
+      className="mobile-link"
+      onClick={() => {
+        closeMobileMenu();
+        navigate("/shoppage");
+      }}
+    >
+      <span>Shop</span>
+      <FaAngleDown />
+    </div>
+
+
+    <div
+      className="mobile-link"
+      onClick={() => {
+        closeMobileMenu();
+        navigate("/new-arrivals");
+      }}
+    >
+      <span>New Arrivals</span>
+    </div>
+
+
+    <Link
+      to="/brands"
+      className="mobile-link"
+      onClick={closeMobileMenu}
+    >
+      <span>Brands</span>
+    </Link>
+
+  </div>
+
+</div>
+
+
+{/* MOBILE MENU BACKGROUND */}
+
+{menuOpen && (
+  <div
+    className="mobile-menu-overlay"
+    onClick={closeMobileMenu}
+  ></div>
+)}
+
+
+
+
     </>
   );
 };

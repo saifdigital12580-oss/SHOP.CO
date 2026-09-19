@@ -76,8 +76,8 @@
 .Footerdiv{
     height: 600px;
     width: 100%;
-    /* border: 2px solid black; */
-    background-color: whitesmoke;
+   
+    background-color:white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,33 +90,72 @@
 
 
 .Firstdiv{
-    height: fit-content;
+    height: 50%;
     width: fit-content;
     /* border: 2px solid black; */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
     padding-left: 40px;
 }
 .Headings{
-    height: 50px;
+    height: 20%;
     width: 100%;
     /* border: 1px solid blue; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .para{
-    height: 50px;
-    width: 100%;
-    /* border: 1px solid red; */
+    height:40%;
+    width: 95%;
+    /* border: 2px solid red; */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: gray;
 }  
 .icons{
-    height: 30px;
+    height: 20%;
     width: 100%;
     /* border: 1px solid green; */
+    display: flex;
+    gap: 10px;
 }
+.facebook{
+      color: blue;
+ transition: all 0.4s ease-in-out;
+ cursor: pointer;
+ border: 1px solid rgb(177, 176, 176);
+ border-radius: 50px;
+}
+.facebook:hover{
+  background-color: black;
+}
+
+
+.insta{
+border-radius: 50px;
+transition: all 0.4s ease-in-out;
+    color: orangered;
+    cursor: pointer;
+  border: 1px solid rgb(177, 176, 176);
+}
+.insta:hover{
+  background-color: black;
+}
+
+.twitter{
+  transition: all 0.4s ease-in-out;
+ border: 1px solid rgb(177, 176, 176);
+    cursor: pointer;
+    border-radius: 50px;
+}
+.twitter:hover{
+  background-color: rgb(147, 147, 147);
+}
+
+
+
+
+
 
 
 
@@ -213,193 +252,286 @@
 
 
 
-@media (min-width:280px) and (max-width:400px) {
-    .Blackdivparant{
-    height: 100%;
+
+
+
+
+
+
+
+
+
+@media (min-width: 280px) and (max-width: 400px) {
+
+  /* =========================
+     NEWSLETTER BLACK BOX
+  ========================= */
+
+  .Blackdivparant {
     width: 100%;
-    /* border: 2px solid black; */
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    padding: 15px 0;
+    box-sizing: border-box;
+  }
 
-.Blackdiv{
-    height: 100%;
+  .Blackdiv {
+    width: 92%;
+    height: 125px;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .fontdiv {
+    width: 100%;
+    height: 60px;
+
+    padding: 0 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    font-size: 16px;
+    line-height: 13px;
+    box-sizing: border-box;
+  }
+
+  .fontdiv h1 {
+    margin: 0;
+  }
+
+  .Buttondiv {
+    width: 100%;
+    height: 55px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+  }
+
+  .input {
     width: 95%;
-    /* border: 2px solid rgb(215, 15, 15); */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-     border-radius: 30px;
-     background-color: black;
-     /* gap: 30px; */
-}
-.fontdiv{
-    height: 130px;
+    height: 22px;
+
+    padding-left: 12px;
+
+    font-size: 8px;
+    box-sizing: border-box;
+  }
+
+  .Buttons {
+    width: 95%;
+    height: 22px;
+
+    font-size: 8px;
+  }
+
+
+  /* =========================
+     FOOTER MAIN
+  ========================= */
+
+  .Footerdiv {
     width: 100%;
-    /* border: 2px solid blue; */
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    display: flex;
-    padding-left: 20px;
-    align-items: center;
-    color: white;
-}
-.Buttondiv{
-    height: 110px;
-    width: 90%;
-    /* border: 2px solid red; */
-   
-     display: flex;
-     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-}
+    height: auto;
 
-
-
-.input{
-  height: 40px;
-  width: 100%;
-  /* border: 2px solid black; */
-  border-radius: 50px;
-  padding-left: 20px;
-  font-size: small;
-}
-
-
-
-.Buttons{
-  height: 40px;
-  width: 100%;
-  /* border: 2px solid black; */
-  border-radius: 50px;
- 
-  cursor: pointer;
-  font-size: small;
-  transition: all 0.4s ease-in-out;
-}
-.Buttons:active{
-    scale: 0.9;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.Footerdiv{
-    height: 100%;
-    width: 100%;
-    /* border: 2px solid black; */
     background-color: whitesmoke;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
+    justify-content: flex-start;
     align-items: center;
-    /* flex-direction: column; */
-    gap: 0px;
-}
 
+    padding: 10px 10px 0;
+    box-sizing: border-box;
 
-
-
-.Firstdiv{
-    height: 200px;
-    width: 100% !important;
-   /* border: 2px solid black; */
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     gap: 10px;
-}
-.Heading{
-    height: 50px;
-    width: 100%;
-    /* border: 2px solid palevioletred; */
-     font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    cursor: pointer;
-    padding-left: 10px;
-}
-.para{
-    height: 50px;
-    width: 100%;
-    /* border: 2px solid black; */
-     font-family: Arial, Helvetica, sans-serif;
-    font-size: small;
-    color: slategray;
-    padding-left: 10px;
-}
-.icons{
-  height: 50px;
-  width: 100%;
-  /* border: 2px solid black; */
-  display: flex;
-  gap: 10px;
-  padding-left: 20px;
-}
-
-.divhandle{
-   display: flex;
-   flex-wrap: wrap;
-
-}
+  }
 
 
+  /* =========================
+     SHOP.CO SECTION
+  ========================= */
 
+  .Firstdiv {
+    width: 100% !important;
+    height: auto;
 
+    border: none;
 
-
-
-
-
-
-
-
-
-
-.box{
-    height: 100%;
-    width: 100%;
-    /* border: 2px solid black; */
-    background: whitesmoke;
     display: flex;
     flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 0;
+
+    gap: 5px;
+    box-sizing: border-box;
+  }
+
+  .Headings {
+    width: 100%;
+    height: auto;
+
+    border: none;
+
+    margin: 0;
+  }
+
+  .Headings h1 {
+    margin: 0;
+
+    font-size: 22px;
+    line-height: 25px;
+  }
+
+  .para {
+    width: 100%;
+    height: auto;
+
+    border: none;
+
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: gray;
+
+    font-size: 8px;
+    line-height: 11px;
+  }
+
+  .icons {
+    width: 100%;
+    height: 25px;
+
+    border: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0;
+  }
+
+  .icons svg {
+    width: 16px;
+    height: 16px;
+  }
+
+
+  /* =========================
+     FOOTER LINKS
+  ========================= */
+
+  .seconddiv {
+    width: 100%;
+    height: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: start;
+
+    gap: 15px 20px;
+
+    padding: 5px 0;
+    box-sizing: border-box;
+  }
+
+  .seconddivchildern {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 5px;
+  }
+
+  .Company {
+    width: 100%;
+    height: auto;
+
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+  .links {
+    width: 100%;
+    height: auto;
+
+    font-size: 8px;
+    line-height: 13px;
+
+    color: gray;
+  }
+
+
+  /* =========================
+     COPYRIGHT + PAYMENT
+  ========================= */
+
+  .box {
+    width: 100%;
+    height: auto;
+
+    background: whitesmoke;
+
+    display: flex;
+    flex-direction: column;
+
     justify-content: center;
     align-items: center;
-    gap: 0px;
-}
-.last>img{
-    height: 40px;
-    width: 250px;
-    /* border: 2px solid black; */
-}
 
-.last{
-    height: 40px;
+    gap: 5px;
+
+    padding: 8px 0;
+
+    box-sizing: border-box;
+  }
+
+  .last {
     width: 100%;
-    /* border: 2px solid chartreuse; */
-     font-family: Arial, Helvetica, sans-serif;
-    font-size: small;
-    color: slategray;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding-left: 5px;
+    height: auto;
 
-}
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    font-size: 7px;
+
+    color: slategray;
+  }
+
+  .last > img {
+    width: 150px;
+    height: auto;
+  }
+
 }
 
 

@@ -12,7 +12,7 @@ const DashboardRecentOrders = () => {
   const fetchOrders = async () => {
     try {
       const response = await fetch(
-        "https://shop-cobackend.onrender.com/dashboard/recent-orders"
+        "https://sk-store-theta.vercel.app/dashboard/recent-orders"
       );
 
       const data = await response.json();
