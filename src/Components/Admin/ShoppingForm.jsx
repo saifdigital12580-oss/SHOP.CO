@@ -64,8 +64,8 @@ const ShoppingForm = () => {
       
 
       const url = isEdit
-        ? `https://sk-store-theta.vercel.app/product/update-product/${editProduct._id}`
-        : "https://sk-store-theta.vercel.app/product/create-product";
+        ? `https://shop-cobackend.onrender.com/product/update-product/${editProduct._id}`
+        : "https://shop-cobackend.onrender.com/product/create-product";
 
       const method = isEdit ? "PUT" : "POST";
 

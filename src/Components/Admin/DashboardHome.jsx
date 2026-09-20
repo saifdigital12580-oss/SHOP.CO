@@ -37,7 +37,7 @@ useEffect(() => {
 const fetchDashboard = async () => {
   try {
     const response = await fetch(
-      "https://sk-store-theta.vercel.app/dashboard/stats"
+      "https://shop-cobackend.onrender.com/dashboard/stats"
     );
 
     const data = await response.json();

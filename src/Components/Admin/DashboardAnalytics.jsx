@@ -42,7 +42,7 @@ const DashboardAnalytics = () => {
     try {
 
       const response = await fetch(
-        "https://sk-store-theta.vercel.app/dashboard/monthly-sales"
+        "https://shop-cobackend.onrender.com/dashboard/monthly-sales"
       );
 
       const result = await response.json();

@@ -9,7 +9,7 @@ const DashBoardProduct = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://sk-store-theta.vercel.app/product/all-products")
+    fetch("https://shop-cobackend.onrender.com/product/all-products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.products);
@@ -29,7 +29,7 @@ const DashBoardProduct = () => {
 
     try {
       const response = await fetch(
-        `https://sk-store-theta.vercel.app/product/delete-product/${id}`,
+        `https://shop-cobackend.onrender.com/product/delete-product/${id}`,
         {
           method: "DELETE",
         }

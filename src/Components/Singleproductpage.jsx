@@ -26,7 +26,7 @@ const alreadyAdded = cartItems.some(
 
 
   useEffect(() => {
-    fetch(`https://sk-store-theta.vercel.app/product/single-product/${id}`)
+    fetch(`https://shop-cobackend.onrender.com/product/single-product/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data.product);

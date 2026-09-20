@@ -165,7 +165,7 @@ useEffect(() => {
         try {
 
             const response = await fetch(
-                "https://sk-store-theta.vercel.app/product/all-products"
+                "https://shop-cobackend.onrender.com/product/all-products"
             );
 
             const data = await response.json();

@@ -49,7 +49,7 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-    fetch("https://sk-store-theta.vercel.app/order/all-orders")
+    fetch("https://shop-cobackend.onrender.com/order/all-orders")
       .then(res => res.json())
       .then(data => setOrders(data.orders));
 }, []);
@@ -78,7 +78,7 @@ const { cartItems, totalItems } = useCart();
   console.log("Logout clicked");
 
   try {
-    const response = await fetch("https://sk-store-theta.vercel.app/auth/logout-user", {
+    const response = await fetch("https://shop-cobackend.onrender.com/auth/logout-user", {
       method: "POST",
       credentials: "include",
     });

@@ -12,7 +12,7 @@ export const WishlistProvider = ({ children }) => {
 
     if (!userId) return;
 
-    fetch(`https://sk-store-theta.vercel.app/wishlist/${userId}`)
+    fetch(`https://shop-cobackend.onrender.com/wishlist/${userId}`)
       .then(res => res.json())
       .then(data => {
 
@@ -41,7 +41,7 @@ export const WishlistProvider = ({ children }) => {
 
     const response = await fetch(
 
-      "https://sk-store-theta.vercel.app/wishlist/add",
+      "https://shop-cobackend.onrender.com/wishlist/add",
 
       {
 
@@ -83,7 +83,7 @@ export const WishlistProvider = ({ children }) => {
 
     await fetch(
 
-      `https://sk-store-theta.vercel.app/wishlist/remove/${id}`,
+      `https://shop-cobackend.onrender.com/wishlist/remove/${id}`,
 
       {
 

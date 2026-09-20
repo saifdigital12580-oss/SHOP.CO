@@ -30,7 +30,7 @@ const {
 
 //     try {
 //       const response = await fetch(
-//         `https://sk-store-theta.vercel.app/product/delete-product/${id}`,
+//         `https://shop-cobackend.onrender.com/product/delete-product/${id}`,
 //         {
 //           method: "DELETE",
 //         }

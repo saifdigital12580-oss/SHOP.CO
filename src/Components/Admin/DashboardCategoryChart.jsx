@@ -32,7 +32,7 @@ fetchChart();
 const fetchChart=async()=>{
 
 const response=await fetch(
-"https://sk-store-theta.vercel.app/dashboard/category-analytics"
+"https://shop-cobackend.onrender.com/dashboard/category-analytics"
 );
 
 const result=await response.json();

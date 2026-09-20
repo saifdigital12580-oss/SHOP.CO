@@ -111,7 +111,7 @@ const navigate = useNavigate();
 
 
 useEffect(() => {
-  fetch("https://sk-store-theta.vercel.app/product/all-products")
+  fetch("https://shop-cobackend.onrender.com/product/all-products")
     .then((res) => {
       console.log(res.status);
       return res.json();

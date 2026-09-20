@@ -22,7 +22,7 @@ const [showModal, setShowModal] = useState(false);
 
 useEffect(()=>{
 
-fetch("https://sk-store-theta.vercel.app/auth/my-profile",{
+fetch("https://shop-cobackend.onrender.com/auth/my-profile",{
 
 credentials:"include"
 
@@ -60,7 +60,7 @@ Loading Your Profile...
 
 const updateProfile = async () => {
 const response = await fetch(
-"https://sk-store-theta.vercel.app/auth/update-profile",
+"https://shop-cobackend.onrender.com/auth/update-profile",
 {
 method:"PUT",
 credentials:"include",

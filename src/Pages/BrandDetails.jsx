@@ -105,7 +105,7 @@ const BrandDetails = () => {
 const [products, setProducts] = useState([]);
 
 useEffect(() => {
-  fetch("https://sk-store-theta.vercel.app/product/all-products")
+  fetch("https://shop-cobackend.onrender.com/product/all-products")
     .then((res) => res.json())
     .then((data) => {
       setProducts(data.products);

@@ -66,7 +66,7 @@ const navigate = useNavigate();
     try {
       console.log(cartItems);
       const response = await fetch(
-        "https://sk-store-theta.vercel.app/order/place-order",
+        "https://shop-cobackend.onrender.com/order/place-order",
         {
           method: "POST",
 

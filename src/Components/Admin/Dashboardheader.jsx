@@ -38,7 +38,7 @@ const Dashboardheader = () => {
       try {
 
         const response = await fetch(
-          "https://sk-store-theta.vercel.app/auth/notifications",
+          "https://shop-cobackend.onrender.com/auth/notifications",
           {
             credentials: "include",
           }
