@@ -9,7 +9,7 @@ import { VscThreeBars } from "react-icons/vsc";
 import { LuLogIn, LuLogOut } from "react-icons/lu";
 
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../Styles/HeaderComp.css";
 import { useCart } from "../Context/CartContext";
@@ -62,6 +62,30 @@ useEffect(() => {
 const { cartItems, totalItems } = useCart();
   // const { cartItems } = useCart();
   const navigate = useNavigate();
+
+  // ================= SEARCH FUNCTIONALITY =================
+
+const [searchQuery, setSearchQuery] = useState("");
+const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+
+const location = useLocation();
+
+const handleSearch = (e) => {
+  e.preventDefault();
+
+  const searchValue = searchQuery.trim();
+
+  if (!searchValue) return;
+
+  // Search ke baad Shop page par bhejo
+  navigate(`/shoppage?search=${encodeURIComponent(searchValue)}`);
+
+  // Mobile search bar close
+  setMobileSearchOpen(false);
+};
+
+
+
 
   const [showLogin, setShowLogin] = useState(
     !!localStorage.getItem("login")
@@ -146,13 +170,22 @@ const closeMobileMenu = () => {
            <Link to="/brands">Brands</Link>
             </div>
 
-          <div className="search-box">
-            <div className="search_icon">
-              <IoSearch color="silver" size={25} />
-            </div>
+        {/* ================= DESKTOP SEARCH ================= */}
 
-            <input type="text" placeholder="Search Games..." />
-          </div>
+<form className="search-box" onSubmit={handleSearch}>
+
+  <button type="submit" className="search_icon">
+    <IoSearch size={22} />
+  </button>
+
+  <input
+    type="text"
+    placeholder="Search products..."
+    value={searchQuery}
+    onChange={(e) => setSearchQuery(e.target.value)}
+  />
+
+</form>
         </div>
 
 
@@ -166,13 +199,13 @@ const closeMobileMenu = () => {
   {showLogin ? (
     <>
       <div className="logicon" onClick={() => handleLogout()}>
-        <LuLogOut size={23} />
+        <LuLogOut size={16} /> LOGOUT
       </div>
 
       {role === "admin" && (
   <div className="accounticon">
     <MdOutlineAccountCircle
-      size={22}
+      size={24}
       onClick={() => navigate("/adminpanel")}
       style={{ cursor: "pointer" }}
     />
@@ -188,10 +221,9 @@ const closeMobileMenu = () => {
 )}
     </>
   ) : (
-    <div className="logicon">
-      <LuLogIn size={23}
-        onClick={() => navigate("/register")}
-      />
+    <div className="logicon"  onClick={() => navigate("/register")}>
+      <LuLogIn size={16} />
+      LOGIN NOW
     </div>
   )}
 
@@ -440,15 +472,22 @@ Open Wishlist
 
 
 
-  <div className="search1">
-    <IoSearch size={20} />
-  </div>
+{/* ================= MOBILE SEARCH ICON ================= */}
 
-  {/* 👇 Sirf is hisse ko replace karo */}
+<button
+  type="button"
+  className="search1"
+  onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
+  aria-label="Open product search"
+>
+  <IoSearch size={16} />
+</button>
+
+
+
  <div className="cartBox">
-  {/* Cart Icon */}
  <div className="cartIcon" onClick={() => setShowCart(true)}>
-  <FiShoppingCart size={24} />
+  <FiShoppingCart size={25} />
 
   {totalItems > 0 && (
     <span className="cartBadge">
@@ -521,6 +560,54 @@ Open Wishlist
 </div>
         
       </div>
+
+
+
+
+{/* ================= MOBILE SEARCH BAR ================= */}
+
+<div
+  className={`mobile-search-panel ${
+    mobileSearchOpen ? "mobile-search-visible" : ""
+  }`}
+>
+
+  <form className="mobile-search-form" onSubmit={handleSearch}>
+
+    <IoSearch className="mobile-search-icon" size={22} />
+
+    <input
+      type="text"
+      placeholder="Search your favourite products..."
+      value={searchQuery}
+      onChange={(e) => setSearchQuery(e.target.value)}
+      autoFocus={mobileSearchOpen}
+    />
+
+    {searchQuery && (
+      <button
+        type="button"
+        className="mobile-search-clear"
+        onClick={() => setSearchQuery("")}
+      >
+        ✕
+      </button>
+    )}
+
+    <button
+      type="submit"
+      className="mobile-search-submit"
+      disabled={!searchQuery.trim()}
+    >
+      Search
+    </button>
+
+  </form>
+
+</div>
+
+
+
 
 
 

@@ -1,116 +1,582 @@
-.editOverlay{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.65);
-backdrop-filter:blur(8px);
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-animation:fade .25s ease;
+/* =========================================
+   OVERLAY
+========================================= */
+
+.editOverlay {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    z-index: 9999;
+
+    overflow-y: auto;
 }
 
-.editModal{
-width:520px;
-background:#171f2f;
-border:1px solid rgba(255,255,255,.08);
-border-radius:18px;
-padding:30px;
-color:white;
-box-shadow:0 20px 60px rgba(0,0,0,.45);
-animation:popup .35s ease;
+
+/* =========================================
+   MODAL
+========================================= */
+
+.editModal {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 620px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #151d2d;
+
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 22px;
+
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.6);
+
 }
 
-.editModal h2{
-margin-bottom:25px;
-text-align:center;
-font-size:30px;
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.editModal::-webkit-scrollbar {
+    width: 7px;
 }
 
-.inputGroup{
-display:flex;
-flex-direction:column;
-margin-bottom:18px;
+.editModal::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-.inputGroup label{
-margin-bottom:8px;
-font-weight:600;
+.editModal::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 20px;
 }
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.closeModalBtn {
+
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ef4444;
+
+    color: white;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    box-shadow:
+        0 8px 25px rgba(239, 68, 68, 0.35);
+
+    transition: all 0.25s ease;
+
+}
+
+
+.closeModalBtn:hover {
+
+    background: #dc2626;
+
+    transform: rotate(90deg) scale(1.08);
+
+    box-shadow:
+        0 10px 30px rgba(239, 68, 68, 0.5);
+
+}
+
+
+.closeModalBtn:disabled {
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.editModalHeader {
+
+    padding-right: 60px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.editSmallTitle {
+
+    display: inline-block;
+
+    color: #a78bfa;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.editModalHeader h2 {
+
+    margin: 0;
+
+    font-size: 32px;
+
+    color: white;
+
+}
+
+
+.editModalHeader p {
+
+    margin: 8px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================
+   INPUT GROUP
+========================================= */
+
+.inputGroup {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.inputGroup label {
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #f8fafc;
+
+}
+
 
 .inputGroup input,
-.inputGroup textarea{
-padding:14px;
-border-radius:10px;
-border:none;
-outline:none;
-font-size:15px;
-background:#232c3f;
-color:white;
-transition:.3s;
+.inputGroup textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid transparent;
+
+    border-radius: 14px;
+
+    background: #222d43;
+
+    color: white;
+
+    padding: 15px 17px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.25s;
+
+    font-family: inherit;
+
 }
+
+
+.inputGroup input {
+
+    height: 54px;
+
+}
+
+
+.inputGroup textarea {
+
+    resize: vertical;
+
+    min-height: 100px;
+
+}
+
 
 .inputGroup input:focus,
-.inputGroup textarea:focus{
-border:1px solid royalblue;
-}
+.inputGroup textarea:focus {
 
-.modalButtons{
-display:flex;
-justify-content:flex-end;
-gap:15px;
-margin-top:25px;
-}
+    border-color: #6366f1;
 
-.cancelBtn{
-padding:12px 28px;
-border:none;
-background:#555;
-color:white;
-border-radius:10px;
-cursor:pointer;
-}
-
-.saveBtn{
-padding:12px 28px;
-border:none;
-background:linear-gradient(90deg,#5d5fef,#2f80ed);
-color:white;
-font-weight:bold;
-border-radius:10px;
-cursor:pointer;
-transition:.3s;
-}
-
-.saveBtn:hover{
-transform:translateY(-2px);
-}
-
-@keyframes popup{
-from{
-opacity:0;
-transform:scale(.8);
-}
-to{
-opacity:1;
-transform:scale(1);
-}
-}
-
-@keyframes fade{
-from{
-opacity:0;
-}
-to{
-opacity:1;
-}
-}
-
-@media(max-width:600px){
-
-.editModal{
-width:92%;
-padding:20px;
-}
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.15);
 
 }
+
+
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+
+    color: #7d8799;
+
+}
+
+
+/* =========================================
+   READ ONLY EMAIL
+========================================= */
+
+.readonlyInput {
+
+    opacity: 0.85;
+
+    cursor: not-allowed;
+
+}
+
+
+.inputGroup small {
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   IMAGE UPLOAD BUTTON
+========================================= */
+
+.uploadImageBtn {
+
+    width: fit-content;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    color: white !important;
+
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+}
+
+
+.uploadImageBtn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(99, 102, 241, 0.35);
+
+}
+
+
+.imageHint {
+
+    color: #64748b;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   IMAGE PREVIEW
+========================================= */
+
+.profileImagePreview {
+
+    width: 120px;
+
+    height: 120px;
+
+    margin: 5px auto 25px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 4px solid #6366f1;
+
+    background: #0f172a;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.4);
+
+}
+
+
+.profileImagePreview img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.modalButtons {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.08
+    );
+
+}
+
+
+.cancelBtn,
+.saveBtn {
+
+    min-width: 140px;
+
+    padding: 13px 22px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+}
+
+
+.cancelBtn {
+
+    background: #293449;
+
+    color: white;
+
+}
+
+
+.cancelBtn:hover {
+
+    background: #37445a;
+
+}
+
+
+.saveBtn {
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    color: white;
+
+    box-shadow:
+        0 8px 25px rgba(99, 102, 241, 0.25);
+
+}
+
+
+.saveBtn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(99, 102, 241, 0.4);
+
+}
+
+
+.cancelBtn:disabled,
+.saveBtn:disabled {
+
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .editOverlay {
+
+        padding: 12px;
+
+        align-items: center;
+
+    }
+
+
+    .editModal {
+
+        max-height: 94vh;
+
+        padding: 25px 18px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .closeModalBtn {
+
+        width: 42px;
+
+        height: 42px;
+
+        top: 12px;
+
+        right: 12px;
+
+        font-size: 28px;
+
+    }
+
+
+    .editModalHeader {
+
+        padding-right: 50px;
+
+    }
+
+
+    .editModalHeader h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .inputGroup input {
+
+        height: 50px;
+
+    }
+
+
+    .modalButtons {
+
+        flex-direction: column;
+
+    }
+
+
+    .cancelBtn,
+    .saveBtn {
+
+        width: 100%;
+
+    }
+
+}
+
+
+
+

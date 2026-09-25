@@ -256,4 +256,419 @@
 
 
 
+/* =========================================================
+   MOBILE LOGIN DESIGN
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* ---------- PAGE ---------- */
+
+    .loginpage {
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+
+        display: block;
+
+        margin: 0;
+        padding: 0;
+
+        background: #f7f4f0;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ---------- LOGIN SIDE ---------- */
+
+    .partsoflogin1 {
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+
+        padding: 28px 22px 35px;
+
+        box-sizing: border-box;
+
+        overflow: visible;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        background: #ffffff;
+    }
+
+
+    /* ---------- LOGO ---------- */
+
+    .TheGamers {
+        width: 100%;
+        height: 10px !important;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0 0 32px;
+    }
+
+    .TheGamers h1 {
+        margin: 0;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: clamp(25px, 7vw, 32px);
+        font-weight: 900;
+
+        letter-spacing: -1px;
+        white-space: nowrap;
+    }
+
+
+    /* ---------- WELCOME ---------- */
+
+    .welcome {
+        width: 100%;
+        height: 0px !important;
+        
+        display: block;
+
+        margin: 0 0 4px;
+    }
+
+    .welcome h1 {
+        margin: 0;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: clamp(25px, 7vw, 30px);
+        font-weight: 800;
+
+        line-height: 1.2;
+    }
+
+
+    /* ---------- SUBTITLE ---------- */
+
+    .signinto {
+        width: 100%;
+        height: auto;
+
+        display: block;
+
+        margin: 0 0 28px;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+
+        color: #9a9a9a;
+    }
+
+
+    /* ---------- EMAIL + PASSWORD WRAPPERS ---------- */
+
+    .partsoflogin1 > div:has(.emailbar),
+    .partsoflogin1 > div:has(.password) {
+        width: 100%;
+
+        margin: 0 0 20px;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        color: #222;
+    }
+
+
+    /* ---------- INPUTS ---------- */
+
+    .emailbar,
+    .password {
+        width: 100%;
+        height: 52px;
+
+        box-sizing: border-box;
+
+        margin-top: 8px;
+        padding: 0 16px;
+
+        border: 1px solid #d5d5d5;
+        border-radius: 11px;
+
+        background: #fafafa;
+
+        outline: none;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+
+        transition: all 0.25s ease;
+    }
+
+    .emailbar::placeholder,
+    .password::placeholder {
+        color: #a0a0a0;
+    }
+
+    .emailbar:focus,
+    .password:focus {
+        background: #ffffff;
+
+        border-color: rgb(223, 171, 107);
+
+        box-shadow:
+            0 0 0 3px rgba(223, 171, 107, 0.14);
+    }
+
+
+    /* ---------- REMOVE JSX BR SPACING ---------- */
+
+    .partsoflogin1 > br {
+        display: none;
+    }
+
+
+    /* ---------- REMEMBER ME ---------- */
+
+    .partsoflogin1 > div:has(.cheakbox) {
+        width: 100%;
+
+        margin: 0 0 17px;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .cheakbox {
+        width: 19px;
+        height: 19px;
+
+        margin: 0 8px 0 0;
+
+        flex-shrink: 0;
+    }
+
+
+    /* ---------- FORGOT PASSWORD ---------- */
+
+    .forgetbox {
+        width: fit-content;
+
+        margin: 0 0 22px;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+
+        color: rgb(223, 171, 107);
+
+        cursor: pointer;
+    }
+
+
+    /* ---------- LOGIN BUTTON ---------- */
+
+    .logininbox {
+        width: 100%;
+        height: 52px;
+
+        margin: 0 0 24px;
+
+        border: 0;
+        border-radius: 11px;
+
+        background: rgb(233, 203, 166);
+
+        font-family:
+            'Lucida Sans',
+            'Lucida Sans Regular',
+            'Lucida Grande',
+            sans-serif;
+
+        font-size: 16px;
+        font-weight: 800;
+
+        cursor: pointer;
+
+        transition: all 0.25s ease;
+    }
+
+    .logininbox:hover {
+        background: rgb(236, 163, 73);
+    }
+
+    .logininbox:active {
+        transform: scale(0.98);
+    }
+
+
+    /* ---------- API MESSAGE ---------- */
+
+    .partsoflogin1 > h1 {
+        width: 100%;
+
+        margin: -5px 0 18px;
+
+        font-size: 15px;
+
+        text-align: center;
+
+        word-break: break-word;
+    }
+
+
+    /* ---------- OR CONTINUE ---------- */
+
+    .margin {
+        width: 100%;
+
+        margin: 0 0 18px;
+
+        padding: 0;
+
+        text-align: center;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11px;
+
+        color: #999;
+
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+
+    /* ---------- GOOGLE BUTTON ---------- */
+
+    .partsoflogin1 > div:has(.googlesignin) {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+
+        margin: 0 0 24px;
+    }
+
+    .googlesignin {
+        width: 100%;
+        height: 46px;
+
+        margin: 0;
+
+        border: 1px solid #d2d2d2;
+        border-radius: 10px;
+
+        background: #ffffff;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+
+        cursor: pointer;
+
+        transition: all 0.25s ease;
+    }
+
+    .googlesignin:hover {
+        background: rgb(226, 239, 250);
+    }
+
+    .googlesignin:active {
+        transform: scale(0.98);
+    }
+
+
+    /* ---------- CREATE ACCOUNT TEXT ---------- */
+
+    .partsoflogin1 > div:has(.creataccount) {
+        width: 100%;
+
+        margin: 0 0 20px;
+
+        text-align: center;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+    }
+
+    .creataccount {
+        color: rgb(223, 171, 107);
+
+        font-size: 14px;
+
+        cursor: pointer;
+    }
+
+
+    /* ---------- BACK TO HOME ---------- */
+
+    .margin2 {
+        width: 100%;
+
+        margin: 5px 0 0;
+
+        text-align: center;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+    }
+
+
+    /* ---------- RIGHT IMAGE SECTION ---------- */
+
+    .partsoflogin2 {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES — 320px / 360px
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .partsoflogin1 {
+        padding: 22px 17px 30px;
+    }
+
+    .TheGamers {
+        margin-bottom: 26px;
+    }
+
+    .TheGamers h1 {
+        font-size: 25px;
+    }
+
+    .welcome h1 {
+        font-size: 24px;
+    }
+
+    .signinto {
+        font-size: 13px;
+        margin-bottom: 24px;
+    }
+
+    .emailbar,
+    .password {
+        height: 49px;
+        font-size: 14px;
+    }
+
+    .logininbox {
+        height: 49px;
+    }
+
+    .googlesignin {
+        height: 44px;
+        font-size: 12px;
+    }
+
+    .margin {
+        font-size: 10px;
+    }
+}
+
 

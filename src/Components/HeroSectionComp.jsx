@@ -189,6 +189,10 @@ useEffect(() => {
 }, []);
 console.log(products);
 
+
+
+
+
   return (
     <>
 
